@@ -66,10 +66,10 @@ Optional:
 * Settings
 
 ## Wireframes
-<img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
+<img src="" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="https://i.imgur.com/lYHn37F.jpg" height=200>
+<img src="" height=200>
 
 ### [BONUS] Interactive Prototype
 <img src="http://g.recordit.co/B2r87BPmTs.gif" width=200>
