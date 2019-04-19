@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
 class SignUpViewController: UIViewController {
@@ -59,7 +60,7 @@ class SignUpViewController: UIViewController {
                     //self.performSegue(withIdentifier: "goToChat", sender: self)
                 }
             }
-    
+                /*
                 // Email Verification
                 let actionCodeSettings = ActionCodeSettings()
                 actionCodeSettings.url = URL(string: "https://www.example.com")
@@ -67,7 +68,7 @@ class SignUpViewController: UIViewController {
                 actionCodeSettings.handleCodeInApp = true
                 actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
             
-            Auth.auth().sendSignInLink(toEmail: usernameTextField.text!,
+                Auth.auth().sendSignInLink(toEmail: usernameTextField.text!,
                                            actionCodeSettings: actionCodeSettings) { error in
                 
                 if let error = error {
@@ -77,13 +78,12 @@ class SignUpViewController: UIViewController {
                 // The link was successfully sent. Inform the user.
                 // Save the email locally so you don't need to ask the user for it again
                 // if they open the link on the same device.
-                UserDefaults.standard.set(email, forKey: "Email")
+                UserDefaults.standard.set(self.usernameTextField.text!, forKey: "Email")
                 self.showMessagePrompt("Check your email for link")
-                
-            }
-            
-            
-        }
+ 
+                }
+            */
+        } // end-else
     }
     
     

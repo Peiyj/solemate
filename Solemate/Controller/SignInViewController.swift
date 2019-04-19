@@ -38,7 +38,7 @@ class SignInViewController: UIViewController {
                 
                 //SVProgressHUD.dismiss()
                 
-                //self.performSegue(withIdentifier: "goToChat", sender: self)
+                self.performSegue(withIdentifier: "goToHome", sender: nil)
                 
             }
             
