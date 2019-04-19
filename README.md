@@ -68,7 +68,7 @@ Optional:
 <img src="" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="" height=200>
+<img src="![Alt text](/img_assets/Wireframes.png?raw=true "Wireframes")" height=200>
 
 ### [BONUS] Interactive Prototype
 <img src="http://g.recordit.co/B2r87BPmTs.gif" width=200>
