@@ -118,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				B00C7B1122695DDC0078A55D /* Solemate */,
+				B00C7B2122695DDD0078A55D /* Info.plist */,
 				B00C7B2922695DDD0078A55D /* SolemateTests */,
 				B00C7B3422695DDD0078A55D /* SolemateUITests */,
 				B00C7B1022695DDC0078A55D /* Products */,
@@ -193,7 +194,6 @@
 		B0B51213226964D500EEC05D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B00C7B2122695DDD0078A55D /* Info.plist */,
 				B00C7B1922695DDC0078A55D /* Solemate.xcdatamodeld */,
 				B00C7B1C22695DDD0078A55D /* Assets.xcassets */,
 			);
