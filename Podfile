@@ -7,6 +7,7 @@ target 'Solemate' do
 
   # Pods for Solemate
   pod 'Firebase'
+  pod 'Firebase/Core'
   pod 'AlamofireImage'
 
   target 'SolemateTests' do

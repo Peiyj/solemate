@@ -57,6 +57,7 @@ PODS:
 DEPENDENCIES:
   - AlamofireImage
   - Firebase
+  - Firebase/Core
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -81,6 +82,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 73609c51bb502df4eced554d2ef0889833479d45
+PODFILE CHECKSUM: eb41aca7f97bf2ec82069334845c283ca5d02b4c
 
 COCOAPODS: 1.5.3
