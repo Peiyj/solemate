@@ -60,7 +60,28 @@ class SignUpViewController: UIViewController {
                 }
             }
     
-            // Email Verification
+                // Email Verification
+                let actionCodeSettings = ActionCodeSettings()
+                actionCodeSettings.url = URL(string: "https://www.example.com")
+                // The sign-in operation has to always be completed in the app.
+                actionCodeSettings.handleCodeInApp = true
+                actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
+            
+            Auth.auth().sendSignInLink(toEmail: usernameTextField.text!,
+                                           actionCodeSettings: actionCodeSettings) { error in
+                
+                if let error = error {
+                    self.showMessagePrompt(error.localizedDescription)
+                    return
+                }
+                // The link was successfully sent. Inform the user.
+                // Save the email locally so you don't need to ask the user for it again
+                // if they open the link on the same device.
+                UserDefaults.standard.set(email, forKey: "Email")
+                self.showMessagePrompt("Check your email for link")
+                
+            }
+            
             
         }
     }
