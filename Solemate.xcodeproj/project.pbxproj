@@ -27,6 +27,15 @@
 		B0B1451B22698E9E0042D1B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */; };
 		B0B1451C22698E9E0042D1B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */; };
 		B0B1451D22698E9E0042D1B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */; };
+		B0B1451F22699BB20042D1B8 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1451E22699BB20042D1B8 /* AccountInfoViewController.swift */; };
+		B0B1452022699BB20042D1B8 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1451E22699BB20042D1B8 /* AccountInfoViewController.swift */; };
+		B0B1452122699BB20042D1B8 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1451E22699BB20042D1B8 /* AccountInfoViewController.swift */; };
+		B0B1452322699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1452222699BC00042D1B8 /* PersonalInfoViewController.swift */; };
+		B0B1452422699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1452222699BC00042D1B8 /* PersonalInfoViewController.swift */; };
+		B0B1452522699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1452222699BC00042D1B8 /* PersonalInfoViewController.swift */; };
+		B0B1452722699BCF0042D1B8 /* RehabInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1452622699BCF0042D1B8 /* RehabInfoViewController.swift */; };
+		B0B1452822699BCF0042D1B8 /* RehabInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1452622699BCF0042D1B8 /* RehabInfoViewController.swift */; };
+		B0B1452922699BCF0042D1B8 /* RehabInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1452622699BCF0042D1B8 /* RehabInfoViewController.swift */; };
 		CD22EE5622696641005CA9F8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD22EE5522696641005CA9F8 /* SignInViewController.swift */; };
 		CD22EE58226966C6005CA9F8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD22EE57226966C6005CA9F8 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +80,9 @@
 		B0B145122269740E0042D1B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0B1451622698E900042D1B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B0B1451E22699BB20042D1B8 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
+		B0B1452222699BC00042D1B8 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
+		B0B1452622699BCF0042D1B8 /* RehabInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RehabInfoViewController.swift; sourceTree = "<group>"; };
 		B70E676F94A51D8C25A8204B /* Pods-SolemateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolemateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SolemateTests/Pods-SolemateTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CBAB3B56DAD694DCE3F129 /* Pods_SolemateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SolemateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD22EE5522696641005CA9F8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +204,9 @@
 				CD22EE57226966C6005CA9F8 /* SignUpViewController.swift */,
 				B0B1451622698E900042D1B8 /* ProfileViewController.swift */,
 				B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */,
+				B0B1451E22699BB20042D1B8 /* AccountInfoViewController.swift */,
+				B0B1452222699BC00042D1B8 /* PersonalInfoViewController.swift */,
+				B0B1452622699BCF0042D1B8 /* RehabInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -444,10 +459,13 @@
 			files = (
 				B0B1451722698E900042D1B8 /* ProfileViewController.swift in Sources */,
 				CD22EE5622696641005CA9F8 /* SignInViewController.swift in Sources */,
+				B0B1451F22699BB20042D1B8 /* AccountInfoViewController.swift in Sources */,
+				B0B1452722699BCF0042D1B8 /* RehabInfoViewController.swift in Sources */,
 				B00C7B1522695DDC0078A55D /* ViewController.swift in Sources */,
 				B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */,
 				B00C7B1B22695DDC0078A55D /* Solemate.xcdatamodeld in Sources */,
 				B0B1451B22698E9E0042D1B8 /* HomeViewController.swift in Sources */,
+				B0B1452322699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */,
 				CD22EE58226966C6005CA9F8 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +476,9 @@
 			files = (
 				B0B1451822698E900042D1B8 /* ProfileViewController.swift in Sources */,
 				B00C7B2B22695DDD0078A55D /* SolemateTests.swift in Sources */,
+				B0B1452422699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */,
+				B0B1452822699BCF0042D1B8 /* RehabInfoViewController.swift in Sources */,
+				B0B1452022699BB20042D1B8 /* AccountInfoViewController.swift in Sources */,
 				B0B1451C22698E9E0042D1B8 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +489,9 @@
 			files = (
 				B0B1451922698E900042D1B8 /* ProfileViewController.swift in Sources */,
 				B00C7B3622695DDD0078A55D /* SolemateUITests.swift in Sources */,
+				B0B1452522699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */,
+				B0B1452922699BCF0042D1B8 /* RehabInfoViewController.swift in Sources */,
+				B0B1452122699BB20042D1B8 /* AccountInfoViewController.swift in Sources */,
 				B0B1451D22698E9E0042D1B8 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

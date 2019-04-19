@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  PersonalInfoViewController.swift
 //  Solemate
 //
 //  Created by Steven Tran on 4/18/19.
@@ -8,16 +8,12 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class PersonalInfoViewController: UIViewController {
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
     }
     
 
