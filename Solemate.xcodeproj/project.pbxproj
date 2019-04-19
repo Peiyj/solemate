@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B1222695DDC0078A55D /* AppDelegate.swift */; };
+		B00C7B1522695DDC0078A55D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B1422695DDC0078A55D /* ViewController.swift */; };
+		B00C7B1822695DDC0078A55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00C7B1622695DDC0078A55D /* Main.storyboard */; };
+		B00C7B1B22695DDC0078A55D /* Solemate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B1922695DDC0078A55D /* Solemate.xcdatamodeld */; };
+		B00C7B1D22695DDD0078A55D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00C7B1C22695DDD0078A55D /* Assets.xcassets */; };
+		B00C7B2022695DDD0078A55D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00C7B1E22695DDD0078A55D /* LaunchScreen.storyboard */; };
+		B00C7B2B22695DDD0078A55D /* SolemateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B2A22695DDD0078A55D /* SolemateTests.swift */; };
+		B00C7B3622695DDD0078A55D /* SolemateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B3522695DDD0078A55D /* SolemateUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B00C7B2722695DDD0078A55D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B00C7B0722695DDC0078A55D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B00C7B0E22695DDC0078A55D;
+			remoteInfo = Solemate;
+		};
+		B00C7B3222695DDD0078A55D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B00C7B0722695DDC0078A55D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B00C7B0E22695DDC0078A55D;
+			remoteInfo = Solemate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B00C7B0F22695DDC0078A55D /* Solemate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solemate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00C7B1222695DDC0078A55D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B00C7B1422695DDC0078A55D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B00C7B1722695DDC0078A55D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B00C7B1A22695DDC0078A55D /* Solemate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Solemate.xcdatamodel; sourceTree = "<group>"; };
+		B00C7B1C22695DDD0078A55D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B00C7B1F22695DDD0078A55D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B00C7B2122695DDD0078A55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B00C7B2622695DDD0078A55D /* SolemateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolemateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00C7B2A22695DDD0078A55D /* SolemateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolemateTests.swift; sourceTree = "<group>"; };
+		B00C7B2C22695DDD0078A55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B00C7B3122695DDD0078A55D /* SolemateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolemateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00C7B3522695DDD0078A55D /* SolemateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolemateUITests.swift; sourceTree = "<group>"; };
+		B00C7B3722695DDD0078A55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B00C7B0C22695DDC0078A55D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00C7B2322695DDD0078A55D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00C7B2E22695DDD0078A55D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B00C7B0622695DDC0078A55D = {
+			isa = PBXGroup;
+			children = (
+				B00C7B1122695DDC0078A55D /* Solemate */,
+				B00C7B2922695DDD0078A55D /* SolemateTests */,
+				B00C7B3422695DDD0078A55D /* SolemateUITests */,
+				B00C7B1022695DDC0078A55D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B00C7B1022695DDC0078A55D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B00C7B0F22695DDC0078A55D /* Solemate.app */,
+				B00C7B2622695DDD0078A55D /* SolemateTests.xctest */,
+				B00C7B3122695DDD0078A55D /* SolemateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B00C7B1122695DDC0078A55D /* Solemate */ = {
+			isa = PBXGroup;
+			children = (
+				B00C7B1222695DDC0078A55D /* AppDelegate.swift */,
+				B00C7B1422695DDC0078A55D /* ViewController.swift */,
+				B00C7B1622695DDC0078A55D /* Main.storyboard */,
+				B00C7B1C22695DDD0078A55D /* Assets.xcassets */,
+				B00C7B1E22695DDD0078A55D /* LaunchScreen.storyboard */,
+				B00C7B2122695DDD0078A55D /* Info.plist */,
+				B00C7B1922695DDC0078A55D /* Solemate.xcdatamodeld */,
+			);
+			path = Solemate;
+			sourceTree = "<group>";
+		};
+		B00C7B2922695DDD0078A55D /* SolemateTests */ = {
+			isa = PBXGroup;
+			children = (
+				B00C7B2A22695DDD0078A55D /* SolemateTests.swift */,
+				B00C7B2C22695DDD0078A55D /* Info.plist */,
+			);
+			path = SolemateTests;
+			sourceTree = "<group>";
+		};
+		B00C7B3422695DDD0078A55D /* SolemateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B00C7B3522695DDD0078A55D /* SolemateUITests.swift */,
+				B00C7B3722695DDD0078A55D /* Info.plist */,
+			);
+			path = SolemateUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B00C7B0E22695DDC0078A55D /* Solemate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B00C7B3A22695DDD0078A55D /* Build configuration list for PBXNativeTarget "Solemate" */;
+			buildPhases = (
+				B00C7B0B22695DDC0078A55D /* Sources */,
+				B00C7B0C22695DDC0078A55D /* Frameworks */,
+				B00C7B0D22695DDC0078A55D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Solemate;
+			productName = Solemate;
+			productReference = B00C7B0F22695DDC0078A55D /* Solemate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B00C7B2522695DDD0078A55D /* SolemateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B00C7B3D22695DDD0078A55D /* Build configuration list for PBXNativeTarget "SolemateTests" */;
+			buildPhases = (
+				B00C7B2222695DDD0078A55D /* Sources */,
+				B00C7B2322695DDD0078A55D /* Frameworks */,
+				B00C7B2422695DDD0078A55D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B00C7B2822695DDD0078A55D /* PBXTargetDependency */,
+			);
+			name = SolemateTests;
+			productName = SolemateTests;
+			productReference = B00C7B2622695DDD0078A55D /* SolemateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B00C7B3022695DDD0078A55D /* SolemateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B00C7B4022695DDD0078A55D /* Build configuration list for PBXNativeTarget "SolemateUITests" */;
+			buildPhases = (
+				B00C7B2D22695DDD0078A55D /* Sources */,
+				B00C7B2E22695DDD0078A55D /* Frameworks */,
+				B00C7B2F22695DDD0078A55D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B00C7B3322695DDD0078A55D /* PBXTargetDependency */,
+			);
+			name = SolemateUITests;
+			productName = SolemateUITests;
+			productReference = B00C7B3122695DDD0078A55D /* SolemateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B00C7B0722695DDC0078A55D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = SolemateInc;
+				TargetAttributes = {
+					B00C7B0E22695DDC0078A55D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					B00C7B2522695DDD0078A55D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = B00C7B0E22695DDC0078A55D;
+					};
+					B00C7B3022695DDD0078A55D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = B00C7B0E22695DDC0078A55D;
+					};
+				};
+			};
+			buildConfigurationList = B00C7B0A22695DDC0078A55D /* Build configuration list for PBXProject "Solemate" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B00C7B0622695DDC0078A55D;
+			productRefGroup = B00C7B1022695DDC0078A55D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B00C7B0E22695DDC0078A55D /* Solemate */,
+				B00C7B2522695DDD0078A55D /* SolemateTests */,
+				B00C7B3022695DDD0078A55D /* SolemateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B00C7B0D22695DDC0078A55D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00C7B2022695DDD0078A55D /* LaunchScreen.storyboard in Resources */,
+				B00C7B1D22695DDD0078A55D /* Assets.xcassets in Resources */,
+				B00C7B1822695DDC0078A55D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00C7B2422695DDD0078A55D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00C7B2F22695DDD0078A55D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B00C7B0B22695DDC0078A55D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00C7B1522695DDC0078A55D /* ViewController.swift in Sources */,
+				B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */,
+				B00C7B1B22695DDC0078A55D /* Solemate.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00C7B2222695DDD0078A55D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00C7B2B22695DDD0078A55D /* SolemateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00C7B2D22695DDD0078A55D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00C7B3622695DDD0078A55D /* SolemateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B00C7B2822695DDD0078A55D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B00C7B0E22695DDC0078A55D /* Solemate */;
+			targetProxy = B00C7B2722695DDD0078A55D /* PBXContainerItemProxy */;
+		};
+		B00C7B3322695DDD0078A55D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B00C7B0E22695DDC0078A55D /* Solemate */;
+			targetProxy = B00C7B3222695DDD0078A55D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B00C7B1622695DDC0078A55D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B00C7B1722695DDC0078A55D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B00C7B1E22695DDD0078A55D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B00C7B1F22695DDD0078A55D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B00C7B3822695DDD0078A55D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B00C7B3922695DDD0078A55D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B00C7B3B22695DDD0078A55D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73V7FFU36G;
+				INFOPLIST_FILE = Solemate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solemate.Solemate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B00C7B3C22695DDD0078A55D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73V7FFU36G;
+				INFOPLIST_FILE = Solemate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solemate.Solemate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B00C7B3E22695DDD0078A55D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73V7FFU36G;
+				INFOPLIST_FILE = SolemateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solemate.SolemateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solemate.app/Solemate";
+			};
+			name = Debug;
+		};
+		B00C7B3F22695DDD0078A55D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73V7FFU36G;
+				INFOPLIST_FILE = SolemateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solemate.SolemateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solemate.app/Solemate";
+			};
+			name = Release;
+		};
+		B00C7B4122695DDD0078A55D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73V7FFU36G;
+				INFOPLIST_FILE = SolemateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solemate.SolemateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Solemate;
+			};
+			name = Debug;
+		};
+		B00C7B4222695DDD0078A55D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73V7FFU36G;
+				INFOPLIST_FILE = SolemateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solemate.SolemateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Solemate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B00C7B0A22695DDC0078A55D /* Build configuration list for PBXProject "Solemate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00C7B3822695DDD0078A55D /* Debug */,
+				B00C7B3922695DDD0078A55D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B00C7B3A22695DDD0078A55D /* Build configuration list for PBXNativeTarget "Solemate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00C7B3B22695DDD0078A55D /* Debug */,
+				B00C7B3C22695DDD0078A55D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B00C7B3D22695DDD0078A55D /* Build configuration list for PBXNativeTarget "SolemateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00C7B3E22695DDD0078A55D /* Debug */,
+				B00C7B3F22695DDD0078A55D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B00C7B4022695DDD0078A55D /* Build configuration list for PBXNativeTarget "SolemateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00C7B4122695DDD0078A55D /* Debug */,
+				B00C7B4222695DDD0078A55D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B00C7B1922695DDC0078A55D /* Solemate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B00C7B1A22695DDC0078A55D /* Solemate.xcdatamodel */,
+			);
+			currentVersion = B00C7B1A22695DDC0078A55D /* Solemate.xcdatamodel */;
+			path = Solemate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B00C7B0722695DDC0078A55D /* Project object */;
+}
