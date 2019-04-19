@@ -65,7 +65,7 @@ Optional:
 * Settings
 
 ## Wireframes
-<img src="" width=800><br>
+<img src="![Alt text](/img_assets/Wireframes.png?raw=true "Wireframes")" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="" height=200>
