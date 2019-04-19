@@ -139,13 +139,10 @@
 		B00C7B1122695DDC0078A55D /* Solemate */ = {
 			isa = PBXGroup;
 			children = (
-				B00C7B1222695DDC0078A55D /* AppDelegate.swift */,
-				B00C7B1422695DDC0078A55D /* ViewController.swift */,
-				B00C7B1622695DDC0078A55D /* Main.storyboard */,
-				B00C7B1C22695DDD0078A55D /* Assets.xcassets */,
-				B00C7B1E22695DDD0078A55D /* LaunchScreen.storyboard */,
-				B00C7B2122695DDD0078A55D /* Info.plist */,
-				B00C7B1922695DDC0078A55D /* Solemate.xcdatamodeld */,
+				B0B512122269646C00EEC05D /* Model */,
+				B0B512112269646A00EEC05D /* View */,
+				B0B512102269646100EEC05D /* Controller */,
+				B0B51213226964D500EEC05D /* Supporting Files */,
 			);
 			path = Solemate;
 			sourceTree = "<group>";
@@ -166,6 +163,41 @@
 				B00C7B3722695DDD0078A55D /* Info.plist */,
 			);
 			path = SolemateUITests;
+			sourceTree = "<group>";
+		};
+		B0B512102269646100EEC05D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B00C7B1422695DDC0078A55D /* ViewController.swift */,
+				B00C7B1222695DDC0078A55D /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0B512112269646A00EEC05D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B00C7B1622695DDC0078A55D /* Main.storyboard */,
+				B00C7B1E22695DDD0078A55D /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0B512122269646C00EEC05D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0B51213226964D500EEC05D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B00C7B2122695DDD0078A55D /* Info.plist */,
+				B00C7B1922695DDC0078A55D /* Solemate.xcdatamodeld */,
+				B00C7B1C22695DDD0078A55D /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
