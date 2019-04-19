@@ -7,9 +7,18 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
 class SignInViewController: UIViewController {
 
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +26,27 @@ class SignInViewController: UIViewController {
     }
     
 
+    
+    @IBAction func SignInButton(_ sender: Any) {
+        //SVProgressHUD.show()
+        Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
+            
+            if error != nil {
+                print(error!)
+            } else {
+                print("Log in successful!")
+                
+                //SVProgressHUD.dismiss()
+                
+                //self.performSegue(withIdentifier: "goToChat", sender: self)
+                
+            }
+            
+        }
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

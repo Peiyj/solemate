@@ -50,11 +50,28 @@
                                 <rect key="frame" x="271" y="498" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="SignInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="23T-aT-aMV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLr-Ma-3uj">
+                                <rect key="frame" x="164" y="622" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="tCq-oz-McC" kind="presentation" id="s2e-Fs-Xbb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordLabel" destination="9DU-XO-Hbg" id="b8k-a9-fkY"/>
+                        <outlet property="passwordTextField" destination="7xd-T4-nXd" id="gCd-ZJ-q6Y"/>
+                        <outlet property="usernameLabel" destination="02F-1b-TGI" id="QzV-Qw-2Ll"/>
+                        <outlet property="usernameTextField" destination="WO4-v5-eo2" id="gXJ-rS-86r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,6 +117,9 @@
                                 <rect key="frame" x="271" y="507" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="SignUpButton:" destination="tCq-oz-McC" eventType="touchUpInside" id="mkI-Mo-9h9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-Nk-igv">
                                 <rect key="frame" x="48" y="321" width="278" height="21"/>
@@ -119,6 +139,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="c28-Ip-cRc"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordLabel" destination="0p0-Nk-igv" id="bib-eL-KLQ"/>
+                        <outlet property="passwordLabel2" destination="qLQ-h7-Wkx" id="JRn-4j-ulO"/>
+                        <outlet property="passwordTextField" destination="cLG-5K-yKq" id="Qb7-S9-y4l"/>
+                        <outlet property="passwordTextField2" destination="y1W-pw-FGH" id="QMQ-dS-1gf"/>
+                        <outlet property="usernameLabel" destination="JYI-sc-MRC" id="17Y-MY-zsC"/>
+                        <outlet property="usernameTextField" destination="OnC-QN-stL" id="hcL-2v-2gd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obz-NF-YS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
