@@ -1,0 +1,6 @@
+framework module Pods_SolemateTests {
+  umbrella header "Pods-SolemateTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
