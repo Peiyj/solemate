@@ -32,7 +32,7 @@ class SignInViewController: UIViewController {
         Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
             
             if error != nil {
-                print(error!)
+                print("Log in unsuccessful: \(error!)")
             } else {
                 print("Log in successful!")
                 

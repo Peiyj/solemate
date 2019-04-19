@@ -18,6 +18,9 @@
 		B00C7B2022695DDD0078A55D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00C7B1E22695DDD0078A55D /* LaunchScreen.storyboard */; };
 		B00C7B2B22695DDD0078A55D /* SolemateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B2A22695DDD0078A55D /* SolemateTests.swift */; };
 		B00C7B3622695DDD0078A55D /* SolemateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B3522695DDD0078A55D /* SolemateUITests.swift */; };
+		B0B145132269740E0042D1B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B145122269740E0042D1B8 /* GoogleService-Info.plist */; };
+		B0B145142269740E0042D1B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B145122269740E0042D1B8 /* GoogleService-Info.plist */; };
+		B0B145152269740E0042D1B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B145122269740E0042D1B8 /* GoogleService-Info.plist */; };
 		CD22EE5622696641005CA9F8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD22EE5522696641005CA9F8 /* SignInViewController.swift */; };
 		CD22EE58226966C6005CA9F8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD22EE57226966C6005CA9F8 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +62,7 @@
 		B00C7B3122695DDD0078A55D /* SolemateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolemateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00C7B3522695DDD0078A55D /* SolemateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolemateUITests.swift; sourceTree = "<group>"; };
 		B00C7B3722695DDD0078A55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0B145122269740E0042D1B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B70E676F94A51D8C25A8204B /* Pods-SolemateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SolemateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SolemateTests/Pods-SolemateTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CBAB3B56DAD694DCE3F129 /* Pods_SolemateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SolemateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD22EE5522696641005CA9F8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			children = (
 				B00C7B1122695DDC0078A55D /* Solemate */,
 				B00C7B2122695DDD0078A55D /* Info.plist */,
+				B0B145122269740E0042D1B8 /* GoogleService-Info.plist */,
 				B00C7B2922695DDD0078A55D /* SolemateTests */,
 				B00C7B3422695DDD0078A55D /* SolemateUITests */,
 				B00C7B1022695DDC0078A55D /* Products */,
@@ -315,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B00C7B2022695DDD0078A55D /* LaunchScreen.storyboard in Resources */,
+				B0B145132269740E0042D1B8 /* GoogleService-Info.plist in Resources */,
 				B00C7B1D22695DDD0078A55D /* Assets.xcassets in Resources */,
 				B00C7B1822695DDC0078A55D /* Main.storyboard in Resources */,
 			);
@@ -324,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B145142269740E0042D1B8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B145152269740E0042D1B8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

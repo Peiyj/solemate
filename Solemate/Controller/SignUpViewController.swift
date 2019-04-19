@@ -31,21 +31,38 @@ class SignUpViewController: UIViewController {
     @IBAction func SignUpButton(_ sender: Any) {
         //SVProgressHUD.show()
         
-        //Set up a new user on our Firebase database
-        
-        Auth.auth().createUser(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
-            
-            if error != nil {
-                print(error!)
-            } else {
-                print("Registration Successful!")
-                
-                //SVProgressHUD.dismiss()
-                
-                //self.performSegue(withIdentifier: "goToChat", sender: self)
-            }
+        // If username/email is null
+        if (usernameTextField.text == "") {
+            print("Email is nil")
+            return
         }
         
+        // Verify Passwords are the same
+        let passwordsEqual = (passwordTextField.text == passwordTextField2.text)
+        
+        if (!passwordsEqual) {
+            // Push alert
+            print("passwords not same: \(passwordsEqual)")
+        } else {
+            print("passwords are the same: \(passwordsEqual)")
+            
+            //Set up a new user on our Firebase database
+            Auth.auth().createUser(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
+                
+                if (error != nil) {
+                    print("Registration unsuccessful")
+                } else {
+                    print("Registration Successful!")
+                    
+                    //SVProgressHUD.dismiss()
+                    
+                    //self.performSegue(withIdentifier: "goToChat", sender: self)
+                }
+            }
+    
+            // Email Verification
+            
+        }
     }
     
     
