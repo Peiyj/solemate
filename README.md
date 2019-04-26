@@ -69,9 +69,11 @@ Optional:
 
 ### [BONUS] Interactive Prototype
 <img src="http://g.recordit.co/B2r87BPmTs.gif" width=200>
+
 ### 4. Models
 
 **user object**
+
 | Property    | Type    | Description                       |
 |-------------|---------|-----------------------------------|
 | userID      | Int     | the user ID                       |
@@ -87,6 +89,7 @@ Optional:
 | date        | DateObj | the date of the injury            |
 
 **height object**
+
 | Property | Type  | Description           |
 |----------|-------|-----------------------|
 | -------- | ----- | -----------           |
@@ -95,12 +98,14 @@ Optional:
 | cm       | Int   | height in centermeter |
 
 **date object**
+
 | Property  | Type | Description |
 |-----------|------|-------------|
 | --------- | ---- | ----------- |
 | day       | Int  | day         |
 | month     | Int  | month       |
 | year      | Int  | year        |
+
 ### 5. Outline Network Requests
 
 * Sign In Screen
