@@ -16,7 +16,11 @@ class AccountInfoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    // Verify all input fields are correctly filled
+    @IBAction func nextOnPress(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToPersonalInfo", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

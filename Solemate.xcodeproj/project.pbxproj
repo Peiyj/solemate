@@ -19,6 +19,7 @@
 		B00C7B2B22695DDD0078A55D /* SolemateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B2A22695DDD0078A55D /* SolemateTests.swift */; };
 		B00C7B3622695DDD0078A55D /* SolemateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B3522695DDD0078A55D /* SolemateUITests.swift */; };
 		B02A0C682272A0C800F931AB /* UserFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A0C672272A0C800F931AB /* UserFeedback.swift */; };
+		B02A0C6A2272ADEA00F931AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A0C692272ADEA00F931AB /* User.swift */; };
 		B0B145132269740E0042D1B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B145122269740E0042D1B8 /* GoogleService-Info.plist */; };
 		B0B145142269740E0042D1B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B145122269740E0042D1B8 /* GoogleService-Info.plist */; };
 		B0B145152269740E0042D1B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B145122269740E0042D1B8 /* GoogleService-Info.plist */; };
@@ -79,6 +80,7 @@
 		B00C7B3522695DDD0078A55D /* SolemateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolemateUITests.swift; sourceTree = "<group>"; };
 		B00C7B3722695DDD0078A55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02A0C672272A0C800F931AB /* UserFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedback.swift; sourceTree = "<group>"; };
+		B02A0C692272ADEA00F931AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B0B145122269740E0042D1B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0B1451622698E900042D1B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				B02A0C672272A0C800F931AB /* UserFeedback.swift */,
+				B02A0C692272ADEA00F931AB /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */,
 				B00C7B1B22695DDC0078A55D /* Solemate.xcdatamodeld in Sources */,
 				B0B1451B22698E9E0042D1B8 /* HomeViewController.swift in Sources */,
+				B02A0C6A2272ADEA00F931AB /* User.swift in Sources */,
 				B0B1452322699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */,
 				CD22EE58226966C6005CA9F8 /* SignUpViewController.swift in Sources */,
 				B02A0C682272A0C800F931AB /* UserFeedback.swift in Sources */,
