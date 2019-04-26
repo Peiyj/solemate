@@ -69,8 +69,39 @@ Optional:
 
 ### [BONUS] Interactive Prototype
 <img src="http://g.recordit.co/B2r87BPmTs.gif" width=200>
+### 4. Models
 
-### Outline Network Requests
+* user object
+| Property    | Type    | Description                       |
+|-------------|---------|-----------------------------------|
+| userID      | Int     | the user ID                       |
+| firstName   | String  | first name of the user            |
+| lastName    | String  | second name of the user           |
+| gender      | String  | the gender of the user            |
+| dateOfBirth | Date    | the user's date of birth          |
+| height      | Height  | the user's height                 |
+| weight      | Int     | the user's weight                 |
+| rehabTime   | Int     | the user's rehab time             |
+| goalWeight  | Int     | the user's weight gain percentage |
+| condition   | String  | the injury condition              |
+| date        | DateObj | the date of the injury            |
+
+* height object
+| Property | Type  | Description           |
+|----------|-------|-----------------------|
+| -------- | ----- | -----------           |
+| feet     | Int   | height in feet        |
+| inches   | Int   | height in inches      |
+| cm       | Int   | height in centermeter |
+
+* date object
+| Property  | Type | Description |
+|-----------|------|-------------|
+| --------- | ---- | ----------- |
+| day       | Int  | day         |
+| month     | Int  | month       |
+| year      | Int  | year        |
+### 5. Outline Network Requests
 
 * Sign In Screen
   * (Read/GET) sign up users
