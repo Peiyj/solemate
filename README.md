@@ -71,7 +71,7 @@ Optional:
 <img src="http://g.recordit.co/B2r87BPmTs.gif" width=200>
 ### 4. Models
 
-* user object
+**user object**
 | Property    | Type    | Description                       |
 |-------------|---------|-----------------------------------|
 | userID      | Int     | the user ID                       |
@@ -86,7 +86,7 @@ Optional:
 | condition   | String  | the injury condition              |
 | date        | DateObj | the date of the injury            |
 
-* height object
+**height object**
 | Property | Type  | Description           |
 |----------|-------|-----------------------|
 | -------- | ----- | -----------           |
@@ -94,7 +94,7 @@ Optional:
 | inches   | Int   | height in inches      |
 | cm       | Int   | height in centermeter |
 
-* date object
+**date object**
 | Property  | Type | Description |
 |-----------|------|-------------|
 | --------- | ---- | ----------- |
