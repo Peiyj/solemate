@@ -69,3 +69,18 @@ Optional:
 
 ### [BONUS] Interactive Prototype
 <img src="http://g.recordit.co/B2r87BPmTs.gif" width=200>
+
+### Outline Network Requests
+
+* Sign In Screen
+  * (Read/GET) sign up users
+  * (Read/GET) tap forget password to fetch the password
+* Sign Up Screen
+  * (Create/POST) create users
+* Account Info Screen
+  * (Create/POST) create account information
+* Personal Info Screen
+  * (Create/POST) create personal info
+
+
+
