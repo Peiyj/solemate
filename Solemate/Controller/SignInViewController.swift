@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-class SignInViewController: UIViewController {
+class SignInViewController: UserFeedback{
 
     
     @IBOutlet weak var usernameLabel: UILabel!
@@ -29,10 +29,23 @@ class SignInViewController: UIViewController {
     
     @IBAction func SignInButton(_ sender: Any) {
         //SVProgressHUD.show()
+        
+        // email nil check
+        if usernameTextField.text == "" {
+            self.alert(Title: "sign in unsuccessful", Message: "Please enter an email")
+        }
+        
+        // password nil check
+        if passwordTextField.text == "" {
+            self.alert(Title: "sign in unsuccessful", Message: "Please enter a password")
+        }
+        
+        
         Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
             
             if error != nil {
                 print("Log in unsuccessful: \(error!)")
+                self.alert(Title: "sign in unsuccessful", Message: "Please enter a valid email and password")
             } else {
                 print("Log in successful!")
                 

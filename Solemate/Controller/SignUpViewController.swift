@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UserFeedback {
 
     
     @IBOutlet weak var usernameLabel: UILabel!
@@ -33,10 +33,16 @@ class SignUpViewController: UIViewController {
         //SVProgressHUD.show()
         
         // If username/email is null
+        alert(Title: "sign in unsuccessful", Message: "Please enter an email")
+        /*
         if (usernameTextField.text == "") {
-            print("Email is nil")
-            return
+            let alert = UIAlertController(title: "registration unsuccessful", message: "Please enter an email", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
+        */
         
         // Verify Passwords are the same
         let passwordsEqual = (passwordTextField.text == passwordTextField2.text)
@@ -44,6 +50,11 @@ class SignUpViewController: UIViewController {
         if (!passwordsEqual) {
             // Push alert
             print("passwords not same: \(passwordsEqual)")
+            let alert = UIAlertController(title: "registration unsuccessful", message: "passwords not same", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
         } else {
             print("passwords are the same: \(passwordsEqual)")
             
@@ -52,6 +63,12 @@ class SignUpViewController: UIViewController {
                 
                 if (error != nil) {
                     print("Registration unsuccessful")
+                    let alert = UIAlertController(title: "registration unsuccessful", message: error?.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                        NSLog("The \"OK\" alert occured.")
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+
                 } else {
                     print("Registration Successful!")
                     
