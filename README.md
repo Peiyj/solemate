@@ -92,7 +92,6 @@ Optional:
 
 | Property | Type  | Description           |
 |----------|-------|-----------------------|
-| -------- | ----- | -----------           |
 | feet     | Int   | height in feet        |
 | inches   | Int   | height in inches      |
 | cm       | Int   | height in centermeter |
@@ -101,7 +100,6 @@ Optional:
 
 | Property  | Type | Description |
 |-----------|------|-------------|
-| --------- | ---- | ----------- |
 | day       | Int  | day         |
 | month     | Int  | month       |
 | year      | Int  | year        |
