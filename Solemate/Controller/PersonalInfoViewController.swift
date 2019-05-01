@@ -16,7 +16,13 @@ class PersonalInfoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onFinishPressed(_ sender: Any) {
+//        Check to see if all the fields are filled out
+//        If a field is not filled out, return an error string
+//        If all fields are filled correctly, segue
+        
+    }
+    
     /*
     // MARK: - Navigation
 
