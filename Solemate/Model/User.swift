@@ -6,8 +6,6 @@
 //  Copyright © 2019 SolemateInc. All rights reserved.
 //
 
-import Foundation
-
 class User {
     
     var userID: Int

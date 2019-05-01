@@ -36,43 +36,83 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         self.fNameTextField.delegate = self
         self.lNameTextField.delegate = self
+        self.heightTextField.delegate = self
+        self.weightTextField.delegate = self
+        self.dayTextField.delegate = self
+        self.monthTextField.delegate = self
+        self.yearTextField.delegate = self
     }
 
     // Used to restrict field to letter inputs only
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = CharacterSet.letters
-        let characterSet = CharacterSet(charactersIn: string)
-        return allowedCharacters.isSuperset(of: characterSet)
+        
+        if (textField == fNameTextField || textField == lNameTextField) {
+            // Restrict to letters
+            let allowedCharacters = CharacterSet.letters
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        } else {
+            // Limit # of characters in certain fields
+            if (textField == dayTextField || textField == monthTextField) {
+                return (textField.text?.count)! < 2
+            } else if (textField == heightTextField || textField == weightTextField) {
+                return (textField.text?.count)! < 3
+            } else if (textField == yearTextField) {
+                return (textField.text?.count)! < 4
+            }
+            // Restrict to numbers
+            let allowedCharacters = CharacterSet.decimalDigits
+            let characterSet = CharacterSet(charactersIn: string)
+            return allowedCharacters.isSuperset(of: characterSet)
+        }
     }
     
     /**
      Verify all input fields are correctly filled
+     If fields are filled out, segue to next signup page
+     
+     - Returns: a Bool value indicating if all the text fields have input
      */
-    func verifyFields() {
+    func verifyFields() -> Bool{
         //        Check to see if all the fields are filled out
-        //        If a field is not filled out, return an error string
-        //        Check for extraneous inputs, aka numbers in the name
-        //        If all fields are filled correctly, segue
         
-        // name edge cases: empty, numbers,
+        // name edge cases: empty
+        // name fields are already limited to letters
         if (fNameTextField.text == "") {
             //alert(Title: "Error", Message: "Please enter your first name")
+            return false
         }
-        
         if (lNameTextField.text == "") {
             //alert(Title: "Error", Message: "Please enter your last name")
+            return false
         }
-        
         if (genderTextField.text == "") {
             //alert(Title: "Error", Message: "Please enter your gender")
+            return false
         }
-        
+        if (dayTextField.text == "" || monthTextField.text == "" || yearTextField.text == "") {
+            //alert(Title: "Error", Message: "Please enter a valid date")
+            return false
+        }
+        if (heightTextField.text == "") {
+            //alert(Title: "Error", Message: "Please enter your height")
+            return false
+        }
         if (weightTextField.text == "") {
             //alert(Title: "Error", Message: "Please enter your weight")
+            return false
         }
-        
+        return true
     }
     
+    /**
+     If field are inputted correctly, assign then to local variables
+     */
+    func assignFields() {
+        // create a new user object and fill in the fields
+        // push the the data object to firebase
+        
+    }
     
     // Mark: - UIPickerView Functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -97,8 +137,7 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func changeHeight(_ sender: Any) {
         if (heightController.selectedSegmentIndex == 0) {
             isCm = false
-        }
-        if (heightController.selectedSegmentIndex == 1) {
+        } else {
             isCm = true
         }
     }
@@ -106,8 +145,7 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func changeWeight(_ sender: Any) {
         if (weightController.selectedSegmentIndex == 0) {
             isKg = false
-        }
-        if (weightController.selectedSegmentIndex == 1) {
+        } else {
             isKg = true
         }
     }
@@ -118,10 +156,14 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // MARK: - Navigation
     
+    // Proceeds to the last stage of signing up
     @IBAction func nextOnPress(_ sender: Any) {
-        
-        
-        self.performSegue(withIdentifier: "goToPersonalInfo", sender: self)
+        if (verifyFields()) {
+            assignFields()
+            self.performSegue(withIdentifier: "goToPersonalInfo", sender: self)
+        } else {
+            print("Failed to input correct values")
+        }
     }
     // End Navigation
     
