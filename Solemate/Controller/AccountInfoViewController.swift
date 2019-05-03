@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     // IBOutlet Declarations
     @IBOutlet weak var fNameTextField: UITextField!
@@ -38,6 +38,10 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     var currCm = 0
     var currKg = 0
     var currLb = 0
+    var currGender = ""
+    var currFname = ""
+    var currLname = ""
+    var currDate = ""
     
     
     override func viewDidLoad() {
@@ -146,27 +150,27 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         // name edge cases: empty
         // name fields are already limited to letters
         if (fNameTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your first name")
+            alert(Title: "Error", Message: "Please enter your first name")
             return false
         }
         if (lNameTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your last name")
+            alert(Title: "Error", Message: "Please enter your last name")
             return false
         }
         if (genderTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your gender")
+            alert(Title: "Error", Message: "Please enter your gender")
             return false
         }
         if (dateTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter a valid date")
+            alert(Title: "Error", Message: "Please enter a valid date")
             return false
         }
         if (heightTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your height")
+            alert(Title: "Error", Message: "Please enter your height")
             return false
         }
         if (weightTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your weight")
+            alert(Title: "Error", Message: "Please enter your weight")
             return false
         }
         return true
@@ -176,6 +180,9 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
      If field are inputted correctly, assign then to local variables
      */
     func assignFields() {
+        currFname = fNameTextField.text!
+        currLname = lNameTextField.text!
+        currDate = dateTextField.text!
         // create a new user object and fill in the fields
         // push the the data object to firebase
         
@@ -211,6 +218,7 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 0 {
+            currGender = genderArr[row]
             genderTextField.text = genderArr[row]
         } else if pickerView.tag == 1 && isCm == false {
             //heightTextField.text = "yes"
