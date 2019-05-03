@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EpT-Wo-AIJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EpT-Wo-AIJ">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -415,11 +415,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdt-SB-caA">
+                                <rect key="frame" x="264" y="663" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="fake next"/>
+                                <connections>
+                                    <segue destination="ven-Pi-kcK" kind="presentation" id="fd5-Fe-wHZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DvS-kp-FpR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Lgb-4l-OaK"/>
+                    <navigationItem key="navigationItem" title="Account Info" id="Lgb-4l-OaK"/>
                     <connections>
                         <outlet property="dateTextField" destination="o3h-vh-qn8" id="MwF-x1-R3V"/>
                         <outlet property="fNameTextField" destination="qCf-IW-6Ry" id="e4B-yg-ifU"/>
@@ -518,13 +526,21 @@
                                 <state key="normal" title="Finish"/>
                                 <connections>
                                     <action selector="onFinishPressed:" destination="ven-Pi-kcK" eventType="touchUpInside" id="fih-AG-QJ4"/>
+                                    <action selector="onPress:" destination="ven-Pi-kcK" eventType="touchUpInside" id="B7w-BD-DW9"/>
+                                    <segue destination="hij-7W-53q" kind="presentation" identifier="goToHome" id="4Wm-Oa-sA5"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6vJ-3o-GjT"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1R8-pa-cbM"/>
+                    <navigationItem key="navigationItem" title="Personal Info" id="1R8-pa-cbM"/>
+                    <connections>
+                        <outlet property="conditionTextField" destination="Wbo-ac-Q1y" id="Mwk-MH-gcC"/>
+                        <outlet property="goalTextField" destination="oSV-l1-afo" id="xRi-Sy-Xx3"/>
+                        <outlet property="rehabTextField" destination="bKy-O7-FOc" id="5B3-YL-Ya6"/>
+                        <outlet property="surgeryTextField" destination="xLl-bD-1i0" id="Yng-EB-iWh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFN-kb-EP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -614,6 +630,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="4Wm-Oa-sA5"/>
+        <segue reference="52f-NG-ytK"/>
         <segue reference="QqJ-LO-msu"/>
     </inferredMetricsTieBreakers>
 </document>
