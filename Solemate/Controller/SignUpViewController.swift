@@ -11,7 +11,6 @@ import Firebase
 import FirebaseAuth
 
 class SignUpViewController: UserFeedback {
-
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
@@ -36,16 +35,6 @@ class SignUpViewController: UserFeedback {
         if usernameTextField.text == nil {
             alert(Title: "registration unsuccessful", Message: "Please enter an email")
         }
-        
-        /*
-        if (usernameTextField.text == "") {
-            let alert = UIAlertController(title: "registration unsuccessful", message: "Please enter an email", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }
-        */
         
         // Verify Passwords are the same
         let passwordsEqual = (passwordTextField.text == passwordTextField2.text)

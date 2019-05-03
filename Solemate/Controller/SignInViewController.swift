@@ -9,8 +9,8 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-class SignInViewController: UserFeedback{
 
+class SignInViewController: UserFeedback{
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!

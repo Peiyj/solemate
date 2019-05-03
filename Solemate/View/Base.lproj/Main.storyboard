@@ -338,27 +338,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTK-Zq-C0j">
-                                <rect key="frame" x="56" y="435" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="month" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KPD-bV-swi">
-                                <rect key="frame" x="154" y="435" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0Y-9v-kjd">
-                                <rect key="frame" x="251" y="435" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjO-kZ-Kln">
                                 <rect key="frame" x="56" y="492" width="131" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -366,7 +345,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dti-qy-5lF">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dti-qy-5lF">
                                 <rect key="frame" x="56" y="521" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -380,7 +359,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-oi-gjg">
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrO-oi-gjg">
                                 <rect key="frame" x="56" y="611" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -429,22 +408,27 @@
                                     <action selector="changeHeight:" destination="cfk-z1-SZP" eventType="valueChanged" id="Vdh-di-dHj"/>
                                 </connections>
                             </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3h-vh-qn8">
+                                <rect key="frame" x="56" y="435" width="262" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DvS-kp-FpR"/>
                     </view>
                     <navigationItem key="navigationItem" id="Lgb-4l-OaK"/>
                     <connections>
-                        <outlet property="dayTextField" destination="TTK-Zq-C0j" id="SRZ-hM-A8H"/>
+                        <outlet property="dateTextField" destination="o3h-vh-qn8" id="MwF-x1-R3V"/>
                         <outlet property="fNameTextField" destination="qCf-IW-6Ry" id="e4B-yg-ifU"/>
                         <outlet property="genderTextField" destination="ygg-ps-Afj" id="8I5-SY-Dr6"/>
                         <outlet property="heightController" destination="j1f-V1-7Qy" id="uPJ-5j-SP5"/>
                         <outlet property="heightTextField" destination="Dti-qy-5lF" id="DSn-qN-GFS"/>
                         <outlet property="lNameTextField" destination="3Sz-iW-94I" id="UsI-By-EUB"/>
-                        <outlet property="monthTextField" destination="KPD-bV-swi" id="FdD-Sn-U4k"/>
                         <outlet property="weightController" destination="1JM-Kx-q5C" id="C8s-11-3sR"/>
                         <outlet property="weightTextField" destination="MrO-oi-gjg" id="2AW-Lj-Ddo"/>
-                        <outlet property="yearTextField" destination="b0Y-9v-kjd" id="IAD-a4-ubY"/>
                         <segue destination="ven-Pi-kcK" kind="push" identifier="goToPersonalInfo" id="52f-NG-ytK"/>
                     </connections>
                 </viewController>

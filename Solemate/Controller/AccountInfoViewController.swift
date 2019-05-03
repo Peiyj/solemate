@@ -14,9 +14,7 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var fNameTextField: UITextField!
     @IBOutlet weak var lNameTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
-    @IBOutlet weak var dayTextField: UITextField!
-    @IBOutlet weak var monthTextField: UITextField!
-    @IBOutlet weak var yearTextField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var heightController: UISegmentedControl!
@@ -24,25 +22,75 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // local Variable Declarations
     var genderArr = ["Male", "Female"]
-    var picker = UIPickerView()
+    var ftArr = Array(0...8)
+    var inArr = Array(0...12)
+    var cmArr = Array(0...250)
+    var lbArr = Array(0...500)
+    var kgArr = Array(0...200)
+    var genderPicker = UIPickerView()
+    var datePicker = UIDatePicker()
+    var heightPicker = UIPickerView()
+    var weightPicker = UIPickerView()
     var isKg = false
     var isCm = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        picker.delegate = self
-        picker.dataSource = self
-        genderTextField.inputView = picker
+        genderPicker.delegate = self
+        genderPicker.dataSource = self
+        heightPicker.delegate = self
+        heightPicker.dataSource = self
+        weightPicker.delegate = self
+        weightPicker.dataSource = self
+        
+        genderTextField.inputView = genderPicker
+        heightTextField.inputView = heightPicker
+        weightTextField.inputView = weightPicker
+        
+        genderPicker.tag = 0
+        heightPicker.tag = 1
+        weightPicker.tag = 2
         
         self.fNameTextField.delegate = self
         self.lNameTextField.delegate = self
         self.heightTextField.delegate = self
         self.weightTextField.delegate = self
-        self.dayTextField.delegate = self
-        self.monthTextField.delegate = self
-        self.yearTextField.delegate = self
+        
+        showDatePicker()
     }
-
+    
+    /**
+      Date Picker
+     */
+    func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        dateTextField.inputAccessoryView = toolbar
+        dateTextField.inputView = datePicker
+        
+    }
+    
+    @objc func donedatePicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        dateTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
+    
     // Used to restrict field to letter inputs only
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -53,12 +101,8 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
             return allowedCharacters.isSuperset(of: characterSet)
         } else {
             // Limit # of characters in certain fields
-            if (textField == dayTextField || textField == monthTextField) {
-                return (textField.text?.count)! < 2
-            } else if (textField == heightTextField || textField == weightTextField) {
+            if (textField == heightTextField || textField == weightTextField) {
                 return (textField.text?.count)! < 3
-            } else if (textField == yearTextField) {
-                return (textField.text?.count)! < 4
             }
             // Restrict to numbers
             let allowedCharacters = CharacterSet.decimalDigits
@@ -90,7 +134,7 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
             //alert(Title: "Error", Message: "Please enter your gender")
             return false
         }
-        if (dayTextField.text == "" || monthTextField.text == "" || yearTextField.text == "") {
+        if (dateTextField.text == "") {
             //alert(Title: "Error", Message: "Please enter a valid date")
             return false
         }
@@ -114,27 +158,68 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         
     }
     
-    // Mark: - UIPickerView Functions
+    // Mark: - UIPicker Functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        
+        if pickerView.tag == 1 && isCm == false {
+            return 2
+        } else {
+            return 1
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return genderArr.count
+        if pickerView.tag == 0 {
+            return genderArr.count
+        } else if pickerView.tag == 1 && isCm == true {
+            return cmArr.count
+        } else if pickerView.tag == 1 && isCm == false {
+            return inArr.count
+        } else if pickerView.tag == 2 && isKg == true {
+            return kgArr.count
+        } else {
+            return lbArr.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        genderTextField.text = genderArr[row]
+        if pickerView.tag == 0 {
+            genderTextField.text = genderArr[row]
+        } else if pickerView.tag == 1 && isCm == false {
+            heightTextField.text = "yes"
+            //heightTextField.text = "\(ftArr[row])\' \(inArr[row])\'"
+        } else if pickerView.tag == 1 && isCm == true {
+            heightTextField.text = String(cmArr[row])
+        } else if pickerView.tag == 2 && isKg == false {
+            weightTextField.text = String(lbArr[row])
+        } else {
+            weightTextField.text = String(kgArr[row])
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return genderArr[row]
+        if pickerView.tag == 0 {
+            return genderArr[row]
+        } else if pickerView.tag == 1 && isCm == false {
+            if component == 0 {
+                return String(ftArr[row])
+            } else {
+                return String(inArr[row])
+            }
+        } else if pickerView.tag == 1 && isCm == true {
+            return String(cmArr[row])
+        } else if pickerView.tag == 2 && isKg == false {
+            return String(lbArr[row])
+        } else {
+            return String(kgArr[row])
+        }
     }
     // End UIPickerView Functions
     
     
     // Mark: - SegmentedController Functions
     @IBAction func changeHeight(_ sender: Any) {
+        // TODO: - change the weight value within the text field if there already exists input in it
         if (heightController.selectedSegmentIndex == 0) {
             isCm = false
         } else {
@@ -143,6 +228,7 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     @IBAction func changeWeight(_ sender: Any) {
+        // TODO: - change the weight value within the text field if there already exists input in it
         if (weightController.selectedSegmentIndex == 0) {
             isKg = false
         } else {
