@@ -64,13 +64,15 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         let generalToolBar = UIToolbar()
         generalToolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: self.view.endEditing(true));
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(endToolbar));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: self.view.endEditing(true));
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(endToolbar));
         
         generalToolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
-        
+        genderTextField.inputAccessoryView = generalToolBar
+        heightTextField.inputAccessoryView = generalToolBar
+        weightTextField.inputAccessoryView = generalToolBar
         showDatePicker()
     }
     
@@ -103,6 +105,10 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
+    
+    @objc func endToolbar(){
         self.view.endEditing(true)
     }
     
