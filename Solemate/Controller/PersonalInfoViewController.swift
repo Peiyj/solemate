@@ -72,7 +72,6 @@ class PersonalInfoViewController: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     
-    
     ////////these are the functions for setting up general picker view///////////
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -118,6 +117,16 @@ class PersonalInfoViewController: UIViewController, UIPickerViewDataSource, UIPi
     
     @objc func endToolbar(){
         self.view.endEditing(true)
-    }
 
+    
+    // MARK: - Navigation
+
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    }
 }

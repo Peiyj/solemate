@@ -253,6 +253,10 @@
                                 <rect key="frame" x="280" y="752" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInPressed:" destination="tCq-oz-McC" eventType="touchUpInside" id="z4x-1e-PYY"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="SignUpToSignIn" id="d6h-Um-22k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2X-H2-bcv">
                                 <rect key="frame" x="272" y="665" width="63" height="30"/>
@@ -377,6 +381,10 @@
                                 <rect key="frame" x="288" y="748" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInPressed:" destination="cfk-z1-SZP" eventType="touchUpInside" id="6do-81-u6f"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="AccountToSignIn" id="FXQ-vk-LDP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WL6-by-85y">
                                 <rect key="frame" x="237" y="679" width="89" height="42"/>
@@ -519,6 +527,10 @@
                                 <rect key="frame" x="271" y="748" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInPressed:" destination="ven-Pi-kcK" eventType="touchUpInside" id="KAy-ZZ-cOJ"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="PersonalToSignIn" id="MzE-Xd-uVP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-uo-sNJ">
                                 <rect key="frame" x="229" y="673" width="89" height="42"/>
@@ -633,5 +645,6 @@
         <segue reference="4Wm-Oa-sA5"/>
         <segue reference="52f-NG-ytK"/>
         <segue reference="QqJ-LO-msu"/>
+        <segue reference="d6h-Um-22k"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -88,14 +88,21 @@ class SignUpViewController: UserFeedback {
     
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Navigates user back to sign in screen
+    @IBAction func signInPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "SignUpToSignIn", sender: self)
+    }
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

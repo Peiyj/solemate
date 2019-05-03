@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     // IBOutlet Declarations
     @IBOutlet weak var fNameTextField: UITextField!
@@ -24,9 +24,9 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     var genderArr = ["Male", "Female"]
     var ftArr = Array(2...8)
     var inArr = Array(0...11)
-    var cmArr = Array(0...250)
-    var lbArr = Array(0...500)
-    var kgArr = Array(0...200)
+    var cmArr = Array(60...250)
+    var lbArr = Array(50...300)
+    var kgArr = Array(20...150)
     var genderPicker = UIPickerView()
     var datePicker = UIDatePicker()
     var heightPicker = UIPickerView()
@@ -35,7 +35,13 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     var isCm = false
     var currFt = 0
     var currIn = 0
-    
+    var currCm = 0
+    var currKg = 0
+    var currLb = 0
+    var currGender = ""
+    var currFname = ""
+    var currLname = ""
+    var currDate = ""
     
     
     override func viewDidLoad() {
@@ -144,27 +150,27 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         // name edge cases: empty
         // name fields are already limited to letters
         if (fNameTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your first name")
+            alert(Title: "Error", Message: "Please enter your first name")
             return false
         }
         if (lNameTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your last name")
+            alert(Title: "Error", Message: "Please enter your last name")
             return false
         }
         if (genderTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your gender")
+            alert(Title: "Error", Message: "Please enter your gender")
             return false
         }
         if (dateTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter a valid date")
+            alert(Title: "Error", Message: "Please enter a valid date")
             return false
         }
         if (heightTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your height")
+            alert(Title: "Error", Message: "Please enter your height")
             return false
         }
         if (weightTextField.text == "") {
-            //alert(Title: "Error", Message: "Please enter your weight")
+            alert(Title: "Error", Message: "Please enter your weight")
             return false
         }
         return true
@@ -174,6 +180,9 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
      If field are inputted correctly, assign then to local variables
      */
     func assignFields() {
+        currFname = fNameTextField.text!
+        currLname = lNameTextField.text!
+        currDate = dateTextField.text!
         // create a new user object and fill in the fields
         // push the the data object to firebase
         
@@ -209,6 +218,7 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 0 {
+            currGender = genderArr[row]
             genderTextField.text = genderArr[row]
         } else if pickerView.tag == 1 && isCm == false {
             //heightTextField.text = "yes"
@@ -219,10 +229,13 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
             }
             heightTextField.text = "\(currFt)\' \(currIn)\""
         } else if pickerView.tag == 1 && isCm == true {
+            currCm = cmArr[row]
             heightTextField.text = String(cmArr[row])
         } else if pickerView.tag == 2 && isKg == false {
+            currLb = lbArr[row]
             weightTextField.text = String(lbArr[row])
         } else {
+            currKg = kgArr[row]
             weightTextField.text = String(kgArr[row])
         }
     }
@@ -253,18 +266,39 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func changeHeight(_ sender: Any) {
         // TODO: - change the weight value within the text field if there already exists input in it
         if (heightController.selectedSegmentIndex == 0) {
+            // lb is pressed
             isCm = false
+            if heightTextField.text != "" {
+                currFt = Int(Double(currCm) * 0.033)
+                currIn = Int(((Double(currCm) * 0.033) - Double(currFt)) * 12)
+                heightTextField.text = "\(currFt)\' \(currIn)\""
+            }
         } else {
+            // cm is pressed
             isCm = true
+            if heightTextField.text != "" {
+                currCm = Int((Double(currFt) * 30.5) + (Double(currIn) * 2.55))
+                heightTextField.text = "\(currCm)"
+            }
         }
     }
     
     @IBAction func changeWeight(_ sender: Any) {
-        // TODO: - change the weight value within the text field if there already exists input in it
         if (weightController.selectedSegmentIndex == 0) {
+            // lb is pressed
             isKg = false
+            if weightTextField.text != "" {
+                currLb = Int(Double(currKg) *
+                    0.453592)
+                weightTextField.text =  String(currLb)
+            }
         } else {
+            // kg is pressed
             isKg = true
+            if weightTextField.text != "" {
+                currKg = Int(Double(currLb) * 2.20462)
+                weightTextField.text =  String(currKg)
+            }
         }
     }
     
@@ -283,6 +317,11 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
             print("Failed to input correct values")
         }
     }
+    
+    @IBAction func signInPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "AccountToSignIn", sender: self)
+    }
+    
     // End Navigation
     
 }
