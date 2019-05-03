@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
     
+    @IBOutlet weak var signOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,17 @@ class ProfileViewController: UIViewController {
         
     }
     
-
+    @IBAction func signOutPressed(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            self.dismiss(animated: true, completion: nil)
+            print("sign out successful")
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

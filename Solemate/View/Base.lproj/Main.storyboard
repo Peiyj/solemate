@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EpT-Wo-AIJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EpT-Wo-AIJ">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -85,10 +85,12 @@
                         <outlet property="passwordTextField" destination="7xd-T4-nXd" id="gCd-ZJ-q6Y"/>
                         <outlet property="usernameLabel" destination="02F-1b-TGI" id="QzV-Qw-2Ll"/>
                         <outlet property="usernameTextField" destination="WO4-v5-eo2" id="gXJ-rS-86r"/>
-                        <segue destination="hij-7W-53q" kind="modal" identifier="goToHome" id="M6F-nf-qkQ"/>
+                        <segue destination="hij-7W-53q" kind="presentation" identifier="goToHome" id="M6F-nf-qkQ"/>
+                        <segue destination="wql-Hq-RB2" kind="unwind" identifier="unwindToRoot" unwindAction="prepareForUnwindWithSegue:" id="mSK-pj-PAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="wql-Hq-RB2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1730" y="-109"/>
         </scene>
@@ -101,39 +103,73 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd4-5p-HNS">
-                                <rect key="frame" x="166" y="101" width="46" height="21"/>
+                                <rect key="frame" x="164" y="310" width="46" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hg5-A5-u0I">
+                                <rect key="frame" x="67" y="93" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Insole"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc8-bl-S2a">
+                                <rect key="frame" x="259" y="93" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Activity"/>
+                                <connections>
+                                    <segue destination="QWK-qk-Hw4" kind="show" id="VJx-oE-9WD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XUS-IC-MNq"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="jdr-rA-6fk"/>
                     <navigationItem key="navigationItem" id="wa9-lv-qLE">
                         <barButtonItem key="leftBarButtonItem" title="Insole" id="qcf-ew-Ed4"/>
                         <barButtonItem key="rightBarButtonItem" title="Activity" id="gCF-LM-h6x"/>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DvH-PS-C70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2729" y="2503"/>
+            <point key="canvasLocation" x="-3001" y="1753"/>
         </scene>
-        <!--View Controller-->
+        <!--Activity View Controller-->
         <scene sceneID="trK-5U-ngZ">
             <objects>
-                <viewController id="QWK-qk-Hw4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityViewController" id="QWK-qk-Hw4" customClass="ActivityViewController" customModule="Solemate" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BvJ-fM-85i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-NB-TB3">
+                                <rect key="frame" x="76" y="96" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Insole"/>
+                                <connections>
+                                    <action selector="InsolePressed:" destination="QWK-qk-Hw4" eventType="touchUpInside" id="vjM-6E-Lxk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnE-rd-PAD">
+                                <rect key="frame" x="253" y="96" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Activity"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yxx-gF-Wk6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Fq8-PL-0Lt"/>
+                    <connections>
+                        <outlet property="InsoleButton" destination="0XK-NB-TB3" id="G12-0B-2P2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJ8-5g-eCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1896" y="2503"/>
+            <point key="canvasLocation" x="-2126" y="1753"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qdh-cl-8f1">
@@ -255,7 +291,6 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signInPressed:" destination="tCq-oz-McC" eventType="touchUpInside" id="z4x-1e-PYY"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="SignUpToSignIn" id="d6h-Um-22k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2X-H2-bcv">
@@ -383,7 +418,6 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signInPressed:" destination="cfk-z1-SZP" eventType="touchUpInside" id="6do-81-u6f"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="AccountToSignIn" id="FXQ-vk-LDP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WL6-by-85y">
@@ -428,7 +462,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="fake next"/>
                                 <connections>
-                                    <segue destination="ven-Pi-kcK" kind="presentation" id="fd5-Fe-wHZ"/>
+                                    <segue destination="ven-Pi-kcK" kind="push" id="fd5-Fe-wHZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -528,8 +562,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <action selector="signInPressed:" destination="ven-Pi-kcK" eventType="touchUpInside" id="KAy-ZZ-cOJ"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="PersonalToSignIn" id="MzE-Xd-uVP"/>
+                                    <action selector="signInPressed:" destination="ven-Pi-kcK" eventType="touchUpInside" id="vXY-4E-AxF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-uo-sNJ">
@@ -537,9 +570,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
                                 <connections>
-                                    <action selector="onFinishPressed:" destination="ven-Pi-kcK" eventType="touchUpInside" id="fih-AG-QJ4"/>
-                                    <action selector="onPress:" destination="ven-Pi-kcK" eventType="touchUpInside" id="B7w-BD-DW9"/>
-                                    <segue destination="hij-7W-53q" kind="presentation" identifier="goToHome" id="4Wm-Oa-sA5"/>
+                                    <action selector="onFinishPressed:" destination="ven-Pi-kcK" eventType="touchUpInside" id="hHZ-yE-vc1"/>
+                                    <segue destination="hij-7W-53q" kind="presentation" identifier="SignUpToHome" id="4Wm-Oa-sA5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -549,6 +581,7 @@
                     <navigationItem key="navigationItem" title="Personal Info" id="1R8-pa-cbM"/>
                     <connections>
                         <outlet property="conditionTextField" destination="Wbo-ac-Q1y" id="Mwk-MH-gcC"/>
+                        <outlet property="finishButton" destination="hs3-uo-sNJ" id="WTi-rt-DWh"/>
                         <outlet property="goalTextField" destination="oSV-l1-afo" id="xRi-Sy-Xx3"/>
                         <outlet property="rehabTextField" destination="bKy-O7-FOc" id="5B3-YL-Ya6"/>
                         <outlet property="surgeryTextField" destination="xLl-bD-1i0" id="Yng-EB-iWh"/>
@@ -570,7 +603,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Uq6-Bg-UrA" kind="relationship" relationship="viewControllers" id="20K-9S-wzT"/>
+                        <segue destination="vKT-Pg-I9S" kind="relationship" relationship="viewControllers" id="ilc-64-Dki"/>
                         <segue destination="wYQ-eu-5nm" kind="relationship" relationship="viewControllers" id="7C6-jQ-G7U"/>
                     </connections>
                 </tabBarController>
@@ -581,6 +614,7 @@
         <!--Profile-->
         <scene sceneID="uDY-X1-a5Q">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CyF-cq-TJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ProfileViewController" id="wYQ-eu-5nm" customClass="ProfileViewController" customModule="Solemate" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B12-cO-zgY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -593,15 +627,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gZ-cU-zTv">
+                                <rect key="frame" x="164" y="737" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zp-sg-xmB">
+                                <rect key="frame" x="157" y="678" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="wYQ-eu-5nm" eventType="touchUpInside" id="iId-6s-x0a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kgl-3o-xia"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="Jrc-56-7ze"/>
+                    <connections>
+                        <outlet property="signOutButton" destination="5zp-sg-xmB" id="cb2-j5-Hf7"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CyF-cq-TJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-966" y="1739"/>
+            <point key="canvasLocation" x="-318" y="1753"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0dg-Me-7Ce">
@@ -621,30 +670,10 @@
             </objects>
             <point key="canvasLocation" x="-2761" y="-109"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="aE5-4R-Bku">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uq6-Bg-UrA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="bF6-sr-jsH"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SzS-Kk-fQx">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vKT-Pg-I9S" kind="relationship" relationship="rootViewController" id="Exb-2o-nsr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hnw-6I-Lt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2351" y="1739"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4Wm-Oa-sA5"/>
-        <segue reference="52f-NG-ytK"/>
+        <segue reference="M6F-nf-qkQ"/>
+        <segue reference="fd5-Fe-wHZ"/>
         <segue reference="QqJ-LO-msu"/>
-        <segue reference="d6h-Um-22k"/>
     </inferredMetricsTieBreakers>
 </document>

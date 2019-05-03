@@ -59,6 +59,10 @@ class SignInViewController: UserFeedback{
         
     }
     
+    // used for logging out later in the app
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
+    }
     
     /*
     // MARK: - Navigation

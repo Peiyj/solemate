@@ -10,6 +10,7 @@
 		63D53C1C8D135CCF26466403 /* Pods_SolemateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD1E6873077DDBA12E3BB52 /* Pods_SolemateUITests.framework */; };
 		662298B46CD9C8B65B57696B /* Pods_Solemate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D99582C1A1DB58B21F184E /* Pods_Solemate.framework */; };
 		8B6A0648275AAE7A98054B34 /* Pods_SolemateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CBAB3B56DAD694DCE3F129 /* Pods_SolemateTests.framework */; };
+		B000A474227C2B43001A0BDD /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000A473227C2B43001A0BDD /* ActivityViewController.swift */; };
 		B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B1222695DDC0078A55D /* AppDelegate.swift */; };
 		B00C7B1522695DDC0078A55D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B1422695DDC0078A55D /* ViewController.swift */; };
 		B00C7B1822695DDC0078A55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00C7B1622695DDC0078A55D /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		5949D4F92752C2D4B5A5082B /* Pods-Solemate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solemate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Solemate/Pods-Solemate.debug.xcconfig"; sourceTree = "<group>"; };
 		7DD1E6873077DDBA12E3BB52 /* Pods_SolemateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SolemateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A955737B4004D6DD06728977 /* Pods-Solemate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solemate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solemate/Pods-Solemate.release.xcconfig"; sourceTree = "<group>"; };
+		B000A473227C2B43001A0BDD /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		B00C7B0F22695DDC0078A55D /* Solemate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solemate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00C7B1222695DDC0078A55D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B00C7B1422695DDC0078A55D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				CD22EE57226966C6005CA9F8 /* SignUpViewController.swift */,
 				B0B1451622698E900042D1B8 /* ProfileViewController.swift */,
 				B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */,
+				B000A473227C2B43001A0BDD /* ActivityViewController.swift */,
 				B0B1451E22699BB20042D1B8 /* AccountInfoViewController.swift */,
 				B0B1452222699BC00042D1B8 /* PersonalInfoViewController.swift */,
 				B0B1452622699BCF0042D1B8 /* RehabInfoViewController.swift */,
@@ -481,6 +484,7 @@
 				B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */,
 				B00C7B1B22695DDC0078A55D /* Solemate.xcdatamodeld in Sources */,
 				B0B1451B22698E9E0042D1B8 /* HomeViewController.swift in Sources */,
+				B000A474227C2B43001A0BDD /* ActivityViewController.swift in Sources */,
 				B02A0C6A2272ADEA00F931AB /* User.swift in Sources */,
 				B0B1452322699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */,
 				CD22EE58226966C6005CA9F8 /* SignUpViewController.swift in Sources */,

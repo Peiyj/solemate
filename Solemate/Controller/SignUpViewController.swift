@@ -93,7 +93,7 @@ class SignUpViewController: UserFeedback {
 
     // Navigates user back to sign in screen
     @IBAction func signInPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "SignUpToSignIn", sender: self)
+    navigationController?.popToRootViewController(animated: true)
     }
      // In a storyboard-based application, you will often want to do a little preparation before navigation
     

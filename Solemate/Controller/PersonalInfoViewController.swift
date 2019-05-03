@@ -8,13 +8,14 @@
 
 import UIKit
 
-class PersonalInfoViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate  {
+class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate  {
     
     //create IBOutlet objects
     @IBOutlet weak var rehabTextField: UITextField!
     @IBOutlet weak var conditionTextField: UITextField!
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var surgeryTextField: UITextField!
+    @IBOutlet weak var finishButton: UIButton!
     
     //local variable declarations
     var datePicker = UIDatePicker()
@@ -42,14 +43,15 @@ class PersonalInfoViewController: UIViewController, UIPickerViewDataSource, UIPi
         showDatePicker()
     }
     
-
-    @IBAction func onPress(_ sender: Any) {
-        if (verifyFields()) {
+    @IBAction func onFinishPressed(_ sender: Any) {
+        if verifyFields() {
             assignFields()
-            self.performSegue(withIdentifier: "goToHome", sender: self)
-        } else {
-            print("Failed to input correct values")
+            performSegue(withIdentifier: "SignUpToHome", sender: self)
         }
+    }
+
+    @IBAction func signInPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     /////////function for checking the fields///////////
@@ -57,8 +59,12 @@ class PersonalInfoViewController: UIViewController, UIPickerViewDataSource, UIPi
         // Check to see if all the fields are filled out
         if (rehabTextField.text == "") || (conditionTextField.text == "")
             || (goalTextField.text == "") || (surgeryTextField.text == ""){
+            // do an alert to notify the user
+            alert(Title: "Error", Message: "Please fill out all fields")
+            print("Fields Not Verified")
             return false
         }
+        print("Fields Verified")
         return true
     }
     
@@ -117,10 +123,14 @@ class PersonalInfoViewController: UIViewController, UIPickerViewDataSource, UIPi
     
     @objc func endToolbar(){
         self.view.endEditing(true)
+    
+
 
     
     // MARK: - Navigation
 
+
+        
      // In a storyboard-based application, you will often want to do a little preparation before navigation
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

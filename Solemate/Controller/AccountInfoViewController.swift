@@ -319,7 +319,7 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
     }
     
     @IBAction func signInPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "AccountToSignIn", sender: self)
+    navigationController?.popToRootViewController(animated: true)
     }
     
     // End Navigation
