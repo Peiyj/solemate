@@ -22,8 +22,8 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // local Variable Declarations
     var genderArr = ["Male", "Female"]
-    var ftArr = Array(0...8)
-    var inArr = Array(0...12)
+    var ftArr = Array(2...8)
+    var inArr = Array(0...11)
     var cmArr = Array(0...250)
     var lbArr = Array(0...500)
     var kgArr = Array(0...200)
@@ -33,6 +33,10 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     var weightPicker = UIPickerView()
     var isKg = false
     var isCm = false
+    var currFt = 0
+    var currIn = 0
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -174,7 +178,11 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         } else if pickerView.tag == 1 && isCm == true {
             return cmArr.count
         } else if pickerView.tag == 1 && isCm == false {
-            return inArr.count
+            if component == 0 {
+                return ftArr.count
+            } else {
+                return inArr.count
+            }
         } else if pickerView.tag == 2 && isKg == true {
             return kgArr.count
         } else {
@@ -186,8 +194,13 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         if pickerView.tag == 0 {
             genderTextField.text = genderArr[row]
         } else if pickerView.tag == 1 && isCm == false {
-            heightTextField.text = "yes"
-            //heightTextField.text = "\(ftArr[row])\' \(inArr[row])\'"
+            //heightTextField.text = "yes"
+            if component == 0 { // Feet
+                currFt = ftArr[row]
+            } else if component == 1 {
+                currIn = inArr[row]
+            }
+            heightTextField.text = "\(currFt)\' \(currIn)\""
         } else if pickerView.tag == 1 && isCm == true {
             heightTextField.text = String(cmArr[row])
         } else if pickerView.tag == 2 && isKg == false {
@@ -198,12 +211,13 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         if pickerView.tag == 0 {
             return genderArr[row]
         } else if pickerView.tag == 1 && isCm == false {
             if component == 0 {
                 return String(ftArr[row])
-            } else {
+            } else if component == 1 {
                 return String(inArr[row])
             }
         } else if pickerView.tag == 1 && isCm == true {
@@ -213,6 +227,7 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         } else {
             return String(kgArr[row])
         }
+        return "hello"
     }
     // End UIPickerView Functions
     
