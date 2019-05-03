@@ -60,6 +60,17 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.heightTextField.delegate = self
         self.weightTextField.delegate = self
         
+        // Toolbars for Gender, Height, Weight
+        let generalToolBar = UIToolbar()
+        generalToolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: self.view.endEditing(true));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: self.view.endEditing(true));
+        
+        generalToolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        
         showDatePicker()
     }
     
@@ -71,7 +82,7 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
         datePicker.datePickerMode = .date
         
         //ToolBar
-        let toolbar = UIToolbar();
+        let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
