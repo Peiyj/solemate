@@ -317,6 +317,11 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
             print("Failed to input correct values")
         }
     }
+    
+    @IBAction func signInPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "AccountToSignIn", sender: self)
+    }
+    
     // End Navigation
     
 }
