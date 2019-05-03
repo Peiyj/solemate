@@ -24,9 +24,9 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     var genderArr = ["Male", "Female"]
     var ftArr = Array(2...8)
     var inArr = Array(0...11)
-    var cmArr = Array(0...250)
-    var lbArr = Array(0...500)
-    var kgArr = Array(0...200)
+    var cmArr = Array(60...250)
+    var lbArr = Array(50...300)
+    var kgArr = Array(20...150)
     var genderPicker = UIPickerView()
     var datePicker = UIDatePicker()
     var heightPicker = UIPickerView()
@@ -35,7 +35,9 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     var isCm = false
     var currFt = 0
     var currIn = 0
-    
+    var currCm = 0
+    var currKg = 0
+    var currLb = 0
     
     
     override func viewDidLoad() {
@@ -219,10 +221,13 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
             }
             heightTextField.text = "\(currFt)\' \(currIn)\""
         } else if pickerView.tag == 1 && isCm == true {
+            currCm = cmArr[row]
             heightTextField.text = String(cmArr[row])
         } else if pickerView.tag == 2 && isKg == false {
+            currLb = lbArr[row]
             weightTextField.text = String(lbArr[row])
         } else {
+            currKg = kgArr[row]
             weightTextField.text = String(kgArr[row])
         }
     }
@@ -253,18 +258,39 @@ class AccountInfoViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func changeHeight(_ sender: Any) {
         // TODO: - change the weight value within the text field if there already exists input in it
         if (heightController.selectedSegmentIndex == 0) {
+            // lb is pressed
             isCm = false
+            if heightTextField.text != "" {
+                currFt = Int(Double(currCm) * 0.033)
+                currIn = Int(((Double(currCm) * 0.033) - Double(currFt)) * 12)
+                heightTextField.text = "\(currFt)\' \(currIn)\""
+            }
         } else {
+            // cm is pressed
             isCm = true
+            if heightTextField.text != "" {
+                currCm = Int((Double(currFt) * 30.5) + (Double(currIn) * 2.55))
+                heightTextField.text = "\(currCm)"
+            }
         }
     }
     
     @IBAction func changeWeight(_ sender: Any) {
-        // TODO: - change the weight value within the text field if there already exists input in it
         if (weightController.selectedSegmentIndex == 0) {
+            // lb is pressed
             isKg = false
+            if weightTextField.text != "" {
+                currLb = Int(Double(currKg) *
+                    0.453592)
+                weightTextField.text =  String(currLb)
+            }
         } else {
+            // kg is pressed
             isKg = true
+            if weightTextField.text != "" {
+                currKg = Int(Double(currLb) * 2.20462)
+                weightTextField.text =  String(currKg)
+            }
         }
     }
     
