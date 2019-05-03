@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
@@ -43,9 +45,11 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
     var currLname = ""
     var currDate = ""
     
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         genderPicker.delegate = self
         genderPicker.dataSource = self
         heightPicker.delegate = self
@@ -185,6 +189,22 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         currDate = dateTextField.text!
         // create a new user object and fill in the fields
         // push the the data object to firebase
+        // Add a new document with a generated ID
+        var ref: DocumentReference? = nil
+        ref = db.collection("users").addDocument(data: [
+            "firstName": currFname,
+            "lastName": currLname,
+            "gender": currGender,
+            "height": String(currCm),
+            "weight": String(currKg),
+            "date": dateTextField.text
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
         
     }
     
