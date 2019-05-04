@@ -116,5 +116,15 @@ Optional:
 * Personal Info Screen
   * (Create/POST) create personal info
 
+## Sprint 1
+Design
+- [x] finish fleshing out wireframes
+- [x] create user testing protocol
+- [x] start style guide
 
+Development
+- [x] error checks for correct login information
+- [x] error checks for sign up process
+- [x] all text fields must be formatted and filled correctly
+- [x] communicate correctly with Firebase user authentification service
 
