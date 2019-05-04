@@ -21,6 +21,9 @@
 		B00C7B3622695DDD0078A55D /* SolemateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B3522695DDD0078A55D /* SolemateUITests.swift */; };
 		B02A0C682272A0C800F931AB /* UserFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A0C672272A0C800F931AB /* UserFeedback.swift */; };
 		B02A0C6A2272ADEA00F931AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A0C692272ADEA00F931AB /* User.swift */; };
+		B07B884F227DDAC400FFEBAB /* StartOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B884E227DDAC400FFEBAB /* StartOneViewController.swift */; };
+		B07B8851227DDAD300FFEBAB /* StartTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B8850227DDAD300FFEBAB /* StartTwoViewController.swift */; };
+		B07B8853227DDAE100FFEBAB /* LiveTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B8852227DDAE100FFEBAB /* LiveTrackingViewController.swift */; };
 		B0B145132269740E0042D1B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B145122269740E0042D1B8 /* GoogleService-Info.plist */; };
 		B0B145142269740E0042D1B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B145122269740E0042D1B8 /* GoogleService-Info.plist */; };
 		B0B145152269740E0042D1B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B145122269740E0042D1B8 /* GoogleService-Info.plist */; };
@@ -83,6 +86,9 @@
 		B00C7B3722695DDD0078A55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02A0C672272A0C800F931AB /* UserFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedback.swift; sourceTree = "<group>"; };
 		B02A0C692272ADEA00F931AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B07B884E227DDAC400FFEBAB /* StartOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOneViewController.swift; sourceTree = "<group>"; };
+		B07B8850227DDAD300FFEBAB /* StartTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTwoViewController.swift; sourceTree = "<group>"; };
+		B07B8852227DDAE100FFEBAB /* LiveTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackingViewController.swift; sourceTree = "<group>"; };
 		B0B145122269740E0042D1B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0B1451622698E900042D1B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -208,12 +214,15 @@
 				B00C7B1222695DDC0078A55D /* AppDelegate.swift */,
 				CD22EE5522696641005CA9F8 /* SignInViewController.swift */,
 				CD22EE57226966C6005CA9F8 /* SignUpViewController.swift */,
+				B0B1451E22699BB20042D1B8 /* AccountInfoViewController.swift */,
+				B0B1452222699BC00042D1B8 /* PersonalInfoViewController.swift */,
 				B0B1451622698E900042D1B8 /* ProfileViewController.swift */,
 				B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */,
 				B000A473227C2B43001A0BDD /* ActivityViewController.swift */,
-				B0B1451E22699BB20042D1B8 /* AccountInfoViewController.swift */,
-				B0B1452222699BC00042D1B8 /* PersonalInfoViewController.swift */,
 				B0B1452622699BCF0042D1B8 /* RehabInfoViewController.swift */,
+				B07B884E227DDAC400FFEBAB /* StartOneViewController.swift */,
+				B07B8850227DDAD300FFEBAB /* StartTwoViewController.swift */,
+				B07B8852227DDAE100FFEBAB /* LiveTrackingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -480,10 +489,13 @@
 				CD22EE5622696641005CA9F8 /* SignInViewController.swift in Sources */,
 				B0B1451F22699BB20042D1B8 /* AccountInfoViewController.swift in Sources */,
 				B0B1452722699BCF0042D1B8 /* RehabInfoViewController.swift in Sources */,
+				B07B884F227DDAC400FFEBAB /* StartOneViewController.swift in Sources */,
 				B00C7B1522695DDC0078A55D /* ViewController.swift in Sources */,
 				B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */,
 				B00C7B1B22695DDC0078A55D /* Solemate.xcdatamodeld in Sources */,
+				B07B8851227DDAD300FFEBAB /* StartTwoViewController.swift in Sources */,
 				B0B1451B22698E9E0042D1B8 /* HomeViewController.swift in Sources */,
+				B07B8853227DDAE100FFEBAB /* LiveTrackingViewController.swift in Sources */,
 				B000A474227C2B43001A0BDD /* ActivityViewController.swift in Sources */,
 				B02A0C6A2272ADEA00F931AB /* User.swift in Sources */,
 				B0B1452322699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */,
