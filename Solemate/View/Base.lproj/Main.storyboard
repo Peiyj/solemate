@@ -155,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DvH-PS-C70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3001" y="1753"/>
+            <point key="canvasLocation" x="-2599" y="1760"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="trK-5U-ngZ">
@@ -225,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJ8-5g-eCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2126" y="1753"/>
+            <point key="canvasLocation" x="-1724" y="1760"/>
         </scene>
         <!--Start One View Controller-->
         <scene sceneID="qdh-cl-8f1">
@@ -281,7 +281,7 @@ injured foot within the target range.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XU-hS-DRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3377" y="2867"/>
+            <point key="canvasLocation" x="-2975" y="2874"/>
         </scene>
         <!--Start Two View Controller-->
         <scene sceneID="2h7-QD-5AD">
@@ -330,7 +330,7 @@ target range. Please adjust the weight based on the feedback.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKZ-dL-5wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2530" y="2867"/>
+            <point key="canvasLocation" x="-2127" y="2874"/>
         </scene>
         <!--Live Tracking View Controller-->
         <scene sceneID="0hJ-B3-DsU">
@@ -350,7 +350,7 @@ target range. Please adjust the weight based on the feedback.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Restart"/>
                                 <connections>
-                                    <segue destination="x6u-YF-5mR" kind="show" id="9KI-Hc-PaH"/>
+                                    <action selector="restartButtonTapped:" destination="2y2-Lu-WVN" eventType="touchUpInside" id="Yoc-pg-ail"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RU0-6V-Fz7">
@@ -365,10 +365,13 @@ target range. Please adjust the weight based on the feedback.</string>
                         <viewLayoutGuide key="safeArea" id="qF8-0I-UJ1"/>
                     </view>
                     <navigationItem key="navigationItem" id="1sB-QF-bzH"/>
+                    <connections>
+                        <outlet property="timerLabel" destination="RU0-6V-Fz7" id="bZJ-MA-epF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Wr-MY-6HW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1730.4000000000001" y="2866.9950738916259"/>
+            <point key="canvasLocation" x="-1327" y="2874"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="HZo-D2-HIC">
@@ -884,7 +887,7 @@ target range. Please adjust the weight based on the feedback.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyF-cq-TJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-319.19999999999999" y="1752.7093596059115"/>
+            <point key="canvasLocation" x="-508" y="1759"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0dg-Me-7Ce">
