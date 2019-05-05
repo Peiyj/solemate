@@ -20,6 +20,7 @@ class SignUpViewController: UserFeedback {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordTextField2: UITextField!
     
+    var currUID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,8 @@ class SignUpViewController: UserFeedback {
             
             //Set up a new user on our Firebase database
             Auth.auth().createUser(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
+                let uid: String = Auth.auth().currentUser?.uid ?? ""
+                self.currUID = uid
                 
                 if (error != nil) {
                     print("Registration unsuccessful")
@@ -59,49 +62,24 @@ class SignUpViewController: UserFeedback {
                     self.performSegue(withIdentifier: "goToAccountInfo", sender: self)
                 }
             }
-                /*
-                // Email Verification
-                let actionCodeSettings = ActionCodeSettings()
-                actionCodeSettings.url = URL(string: "https://www.example.com")
-                // The sign-in operation has to always be completed in the app.
-                actionCodeSettings.handleCodeInApp = true
-                actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
-            
-                Auth.auth().sendSignInLink(toEmail: usernameTextField.text!,
-                                           actionCodeSettings: actionCodeSettings) { error in
-                
-                if let error = error {
-                    self.showMessagePrompt(error.localizedDescription)
-                    return
-                }
-                // The link was successfully sent. Inform the user.
-                // Save the email locally so you don't need to ask the user for it again
-                // if they open the link on the same device.
-                UserDefaults.standard.set(self.usernameTextField.text!, forKey: "Email")
-                self.showMessagePrompt("Check your email for link")
- 
-                }
-            */
         } // end-else
     }
-    
-    
 
     
     // MARK: - Navigation
 
     // Navigates user back to sign in screen
     @IBAction func signInPressed(_ sender: Any) {
-    navigationController?.popToRootViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
      // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let vc = segue.destination as! AccountInfoViewController
+        vc.currUID = self.currUID
     }
-    */
+    
     
 
 }

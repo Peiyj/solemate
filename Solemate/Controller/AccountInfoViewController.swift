@@ -44,6 +44,7 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
     var currFname = ""
     var currLname = ""
     var currDate = ""
+    var currUID = ""
     
     let db = Firestore.firestore()
     
@@ -187,25 +188,6 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         currFname = fNameTextField.text!
         currLname = lNameTextField.text!
         currDate = dateTextField.text!
-        // create a new user object and fill in the fields
-        // push the the data object to firebase
-        // Add a new document with a generated ID
-        var ref: DocumentReference? = nil
-        ref = db.collection("users").addDocument(data: [
-            "firstName": currFname,
-            "lastName": currLname,
-            "gender": currGender,
-            "height": String(currCm),
-            "weight": String(currKg),
-            "date": dateTextField.text
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
-        }
-        
     }
     
     // Mark: - UIPicker Functions
@@ -247,15 +229,21 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
             } else if component == 1 {
                 currIn = inArr[row]
             }
+            currCm = Int((Double(currFt) * 30.5) + (Double(currIn) * 2.55))
             heightTextField.text = "\(currFt)\' \(currIn)\""
         } else if pickerView.tag == 1 && isCm == true {
             currCm = cmArr[row]
+            currFt = Int(Double(currCm) * 0.033)
+            currIn = Int(((Double(currCm) * 0.033) - Double(currFt)) * 12)
             heightTextField.text = String(cmArr[row])
         } else if pickerView.tag == 2 && isKg == false {
             currLb = lbArr[row]
+            currKg = Int(Double(currLb) * 0.453592)
             weightTextField.text = String(lbArr[row])
         } else {
             currKg = kgArr[row]
+            currLb = Int(Double(currKg) *
+                2.20462)
             weightTextField.text = String(kgArr[row])
         }
     }
@@ -289,15 +277,12 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
             // lb is pressed
             isCm = false
             if heightTextField.text != "" {
-                currFt = Int(Double(currCm) * 0.033)
-                currIn = Int(((Double(currCm) * 0.033) - Double(currFt)) * 12)
                 heightTextField.text = "\(currFt)\' \(currIn)\""
             }
         } else {
             // cm is pressed
             isCm = true
             if heightTextField.text != "" {
-                currCm = Int((Double(currFt) * 30.5) + (Double(currIn) * 2.55))
                 heightTextField.text = "\(currCm)"
             }
         }
@@ -308,15 +293,14 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
             // lb is pressed
             isKg = false
             if weightTextField.text != "" {
-                currLb = Int(Double(currKg) *
-                    0.453592)
+                //currLb = Int(Double(currKg) * 0.453592)
                 weightTextField.text =  String(currLb)
             }
         } else {
             // kg is pressed
             isKg = true
             if weightTextField.text != "" {
-                currKg = Int(Double(currLb) * 2.20462)
+                //currKg = Int(Double(currLb) * 2.20462)
                 weightTextField.text =  String(currKg)
             }
         }
@@ -339,9 +323,22 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
     }
     
     @IBAction func signInPressed(_ sender: Any) {
-    navigationController?.popToRootViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! PersonalInfoViewController
+        vc.currFt = self.currFt
+        vc.currIn = self.currIn
+        vc.currCm = self.currCm
+        vc.currKg = self.currKg
+        vc.currLb = self.currLb
+        vc.currGender = self.currGender
+        vc.currFname = self.currFname
+        vc.currLname = self.currLname
+        vc.currDate = self.currDate
+        vc.currUID = self.currUID
+    }
     // End Navigation
     
 }

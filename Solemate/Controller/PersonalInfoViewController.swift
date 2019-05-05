@@ -22,6 +22,16 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     var datePicker = UIDatePicker()
     var conditionArr = ["ACLtear", "Gary"]
     var conditionPicker = UIPickerView()
+    var currFt = 0
+    var currIn = 0
+    var currCm = 0
+    var currKg = 0
+    var currLb = 0
+    var currGender = ""
+    var currFname = ""
+    var currLname = ""
+    var currDate = ""
+    var currUID = ""
     
     let db = Firestore.firestore()
     
@@ -79,7 +89,17 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
-        ref = db.collection("users").addDocument(data: [
+        //ref = db.collection("users").addDocument(data: [
+        db.collection("users").document(currUID).setData([
+            "firstName": currFname,
+            "lastName": currLname,
+            "gender": currGender,
+            "heightCm": currCm,
+            "heightFt": currFt,
+            "heightIn": currIn,
+            "weightKg": currKg,
+            "weightLb": currLb,
+            "date": currDate,
             "rehabTime" : rehabTextField.text,
             "goalBodyWeight" : goalTextField.text,
             "condition" : conditionTextField.text,
