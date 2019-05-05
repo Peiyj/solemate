@@ -126,6 +126,9 @@
                                 <rect key="frame" x="148" y="608" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Disconnect"/>
+                                <connections>
+                                    <action selector="onDisconnectPressed:" destination="vKT-Pg-I9S" eventType="touchUpInside" id="wPQ-44-L3h"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl2-mf-K1o">
                                 <rect key="frame" x="117" y="562" width="141" height="21"/>
@@ -152,6 +155,10 @@
                         <barButtonItem key="rightBarButtonItem" title="Activity" id="gCF-LM-h6x"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="deviceNameLabel" destination="kl2-mf-K1o" id="EOX-Dy-4rF"/>
+                        <outlet property="deviceStatusButton" destination="pxX-RQ-Ew0" id="3Ww-0B-YU0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DvH-PS-C70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

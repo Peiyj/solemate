@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 class LiveTrackingViewController: UserFeedback {
     // This class deals with pulling all bluetooth data
@@ -18,10 +19,16 @@ class LiveTrackingViewController: UserFeedback {
     var seconds = 30
     var isTimerRuning = false
     
+    var centralManager: CBCentralManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Initialize Bluetooth Configuration Manager
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+        centralManager.scanForPeripherals(withServices: nil)
+
+        // Begin the Timer
         runTimer()
     }
     
@@ -59,4 +66,25 @@ class LiveTrackingViewController: UserFeedback {
     }
     */
 
+}
+
+extension LiveTrackingViewController: CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        switch central.state {
+        case .unknown:
+            print("central.state is .unknown")
+        case .resetting:
+            print("central.state is .resetting")
+        case .unsupported:
+            print("central.state is .unsupported")
+        case .unauthorized:
+            print("central.state is .unauthorized")
+        case .poweredOff:
+            print("central.state is .poweredOff")
+        case .poweredOn:
+            print("central.state is .poweredOn")
+        }
+    }
+    
+    
 }

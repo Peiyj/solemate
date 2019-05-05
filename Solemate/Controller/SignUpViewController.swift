@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SVProgressHUD
 
 class SignUpViewController: UserFeedback {
     
@@ -46,6 +47,8 @@ class SignUpViewController: UserFeedback {
         } else {
             // Passwords same
             
+            SVProgressHUD.show()
+            
             //Set up a new user on our Firebase database
             Auth.auth().createUser(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
                 let uid: String = Auth.auth().currentUser?.uid ?? ""
@@ -57,7 +60,7 @@ class SignUpViewController: UserFeedback {
                 } else {
                     print("Registration Successful!")
                     
-                    //SVProgressHUD.dismiss()
+                    SVProgressHUD.dismiss()
                     
                     self.performSegue(withIdentifier: "goToAccountInfo", sender: self)
                 }

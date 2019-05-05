@@ -37,16 +37,16 @@ class ProfileViewController: UIViewController {
         
         let docRef = db.collection("users").document((Auth.auth().currentUser?.uid)!)
         
-        print((Auth.auth().currentUser?.uid)!)
+        //print((Auth.auth().currentUser?.uid)!)
         
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 // Data exists and was retrieved
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
+                //let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                //print("Document data: \(dataDescription)")
                 
-                var heightFt = document["heightFt"]
-                var heightIn = document["heightIn"]
+                let heightFt = document["heightFt"]
+                let heightIn = document["heightIn"]
                 
                 // Assign Fields with data
                 self.firstNameLabel.text = document["firstName"] as? String
@@ -59,12 +59,6 @@ class ProfileViewController: UIViewController {
                 self.conditionLabel.text = document["condition"] as? String
                 self.surgeryDateLabel.text = document["surgeryDate"] as? String
                 self.rehabTimeLabel.text = document["rehabTime"] as? String
-                
-                print(document["heightFt"] as? String)
-                print(document["heightIn"])
-                print(document["heightCm"])
-                print(document["weightLb"])
-                print(document["weightKg"])
             } else {
                 print("Document does not exist")
             }

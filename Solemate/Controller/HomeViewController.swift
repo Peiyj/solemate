@@ -7,9 +7,23 @@
 //
 
 import UIKit
+import CoreBluetooth
 
 class HomeViewController: UIViewController {
 
+    
+    @IBOutlet weak var deviceStatusButton: UIButton!
+    @IBOutlet weak var deviceNameLabel: UILabel!
+    
+    var manager: CBCentralManager!
+    var device: CBPeripheral?
+    var characteristics: [CBCharacteristic]?
+    var connected = CBPeripheralState.connected
+    var disconnected = CBPeripheralState.disconnected
+//    var serviceUUID = "1234"
+//    var char1 = "FFE1"
+//    let deviceName = "HMSoft"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +32,10 @@ class HomeViewController: UIViewController {
     }
     
 
+    // Function used to connect / disconnect Bluetooth Device
+    @IBAction func onDisconnectPressed(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

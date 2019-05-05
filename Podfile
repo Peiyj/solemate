@@ -11,6 +11,7 @@ target 'Solemate' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'AlamofireImage'
+  pod 'SVProgressHUD'
 
   target 'SolemateTests' do
     inherit! :search_paths

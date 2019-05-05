@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SVProgressHUD
 
 class SignInViewController: UserFeedback{
     
@@ -40,16 +41,18 @@ class SignInViewController: UserFeedback{
             self.alert(Title: "sign in unsuccessful", Message: "Please enter a password")
         }
         
+        SVProgressHUD.show()
         
         Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
             
             if error != nil {
                 print("Log in unsuccessful: \(error!)")
+                SVProgressHUD.dismiss()
                 self.alert(Title: "sign in unsuccessful", Message: "Please enter a valid email and password")
             } else {
                 print("Log in successful!")
                 
-                //SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss()
                 
                 self.performSegue(withIdentifier: "goToHome", sender: nil)
                 
