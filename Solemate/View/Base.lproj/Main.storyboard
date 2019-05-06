@@ -755,10 +755,10 @@ target range. Please adjust the weight based on the feedback.</string>
             </objects>
             <point key="canvasLocation" x="1209" y="-109"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabBarController-->
         <scene sceneID="aYw-Ka-Lug">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hij-7W-53q" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" title="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="hij-7W-53q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kI9-Gq-tBj"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QfO-lx-Tcv">
@@ -919,6 +919,6 @@ target range. Please adjust the weight based on the feedback.</string>
         <segue reference="4Wm-Oa-sA5"/>
         <segue reference="fd5-Fe-wHZ"/>
         <segue reference="QqJ-LO-msu"/>
-        <segue reference="Btl-Md-kZK"/>
+        <segue reference="3mt-Hy-z2D"/>
     </inferredMetricsTieBreakers>
 </document>

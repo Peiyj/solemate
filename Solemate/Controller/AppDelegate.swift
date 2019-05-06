@@ -14,13 +14,26 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    //private let auth = Auth.auth()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
         FirebaseApp.configure()
         
+        // If user is already logged in
+        let user = Auth.auth().currentUser;
+        
+        if user != nil {
+            // opening a view controller
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            
+            // instantiating a view controller
+            let tabBarController = main.instantiateViewController(withIdentifier: "TabBarController")
+            
+            window?.rootViewController = tabBarController
+        } else {
+            
+        }
         return true
     }
 
