@@ -128,3 +128,21 @@ Development
 - [x] all text fields must be formatted and filled correctly
 - [x] communicate correctly with Firebase user authentification service
 
+**Sprint 2**
+
+Design
+- [x] Conduct user tests
+- [x] Refine wireframes
+- [ ] Start creating hi fi prototypes
+
+Development
+- [x] figure how to pass data between view controllers. Don't add user data to Firebase until we have finished sign up process
+- [ ] sign up button on sign up page broken SIGABRT
+- [x] fix logout crashing bug
+- [ ] fix rounding error in AccountInfo View Controller
+- [ ] button functionality must trigger bluetooth device
+- [ ] bluetooth activity must be turned on
+- [ ] create an in-app timer to count the tracking period
+- [ ] receive data from bluetooth transmitter
+- [ ] convert bitstream of input data to a % of body weight inputed onto the smart insole
+
