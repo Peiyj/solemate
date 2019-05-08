@@ -158,8 +158,6 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     @objc func endToolbar(){
         self.view.endEditing(true)
     
-
-
     
     // MARK: - Navigation
 

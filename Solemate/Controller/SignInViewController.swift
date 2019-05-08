@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import SVProgressHUD
 
-class SignInViewController: UserFeedback{
+class SignInViewController: UserFeedback, UITextFieldDelegate{
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -24,9 +24,14 @@ class SignInViewController: UserFeedback{
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.usernameTextField.delegate = self
+        self.passwordTextField.delegate = self
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
     @IBAction func SignInButton(_ sender: Any) {
         //SVProgressHUD.show()

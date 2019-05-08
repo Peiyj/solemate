@@ -216,9 +216,9 @@
 				CD22EE57226966C6005CA9F8 /* SignUpViewController.swift */,
 				B0B1451E22699BB20042D1B8 /* AccountInfoViewController.swift */,
 				B0B1452222699BC00042D1B8 /* PersonalInfoViewController.swift */,
-				B0B1451622698E900042D1B8 /* ProfileViewController.swift */,
 				B0B1451A22698E9E0042D1B8 /* HomeViewController.swift */,
 				B000A473227C2B43001A0BDD /* ActivityViewController.swift */,
+				B0B1451622698E900042D1B8 /* ProfileViewController.swift */,
 				B0B1452622699BCF0042D1B8 /* RehabInfoViewController.swift */,
 				B07B884E227DDAC400FFEBAB /* StartOneViewController.swift */,
 				B07B8850227DDAD300FFEBAB /* StartTwoViewController.swift */,
@@ -693,6 +693,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73V7FFU36G;
 				INFOPLIST_FILE = Solemate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -712,6 +713,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73V7FFU36G;
 				INFOPLIST_FILE = Solemate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

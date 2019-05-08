@@ -9,28 +9,12 @@
 import UIKit
 
 class StartOneViewController: UIViewController {
-
-    @IBOutlet weak var homeButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
-    
-    @IBAction func onHomePress(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        
-    }
-    
-    
-    @IBAction func onBackPress(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     
     
     /*

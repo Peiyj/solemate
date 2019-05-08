@@ -55,6 +55,7 @@ class SignUpViewController: UserFeedback {
                 self.currUID = uid
                 
                 if (error != nil) {
+                    SVProgressHUD.dismiss()
                     print("Registration unsuccessful")
                     self.alert(Title: "registration unsuccessful", Message: (error?.localizedDescription)!)
                 } else {

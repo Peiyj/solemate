@@ -322,10 +322,6 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         }
     }
     
-    @IBAction func signInPressed(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! PersonalInfoViewController
         vc.currFt = self.currFt

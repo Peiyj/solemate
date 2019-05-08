@@ -23,9 +23,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var surgeryDateLabel: UILabel!
     @IBOutlet weak var rehabTimeLabel: UILabel!
-    
-    
     @IBOutlet weak var signOutButton: UIButton!
+    
+    var window: UIWindow?
     
     let db = Firestore.firestore()
     
@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        
+        // Displaying user information
         let docRef = db.collection("users").document((Auth.auth().currentUser?.uid)!)
         
         //print((Auth.auth().currentUser?.uid)!)
@@ -70,7 +70,14 @@ class ProfileViewController: UIViewController {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            self.dismiss(animated: true, completion: nil)
+            
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let signInViewController = main.instantiateViewController(withIdentifier: "SignInViewController")
+            
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            
+            delegate.window?.rootViewController = signInViewController
+            
             print("sign out successful")
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
