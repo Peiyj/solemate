@@ -221,6 +221,16 @@
                                     <segue destination="x6u-YF-5mR" kind="show" id="3mt-Hy-z2D"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GwV-Ni-Jvy" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="47" y="134" width="280" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GsY-Ys-n2R" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="67" y="382" width="240" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yxx-gF-Wk6"/>
@@ -228,11 +238,13 @@
                     <navigationItem key="navigationItem" id="Fq8-PL-0Lt"/>
                     <connections>
                         <outlet property="InsoleButton" destination="0XK-NB-TB3" id="G12-0B-2P2"/>
+                        <outlet property="barChart" destination="GwV-Ni-Jvy" id="zIz-j1-mdH"/>
+                        <outlet property="pieChart" destination="GsY-Ys-n2R" id="hO0-FN-LMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJ8-5g-eCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1724" y="1760"/>
+            <point key="canvasLocation" x="-1724" y="1759.3596059113302"/>
         </scene>
         <!--Start One View Controller-->
         <scene sceneID="qdh-cl-8f1">
@@ -276,6 +288,10 @@ injured foot within the target range.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlF-md-AG3">
+                                <rect key="frame" x="19" y="108" width="340" height="248"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0Zh-7R-UmK"/>
@@ -288,7 +304,7 @@ injured foot within the target range.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XU-hS-DRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2975" y="2874"/>
+            <point key="canvasLocation" x="-2975.1999999999998" y="2873.6453201970444"/>
         </scene>
         <!--Start Two View Controller-->
         <scene sceneID="2h7-QD-5AD">
@@ -329,6 +345,10 @@ target range. Please adjust the weight based on the feedback.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3k4-kz-yTw">
+                                <rect key="frame" x="19" y="110" width="340" height="248"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fkV-pE-jRs"/>
@@ -919,6 +939,6 @@ target range. Please adjust the weight based on the feedback.</string>
         <segue reference="4Wm-Oa-sA5"/>
         <segue reference="fd5-Fe-wHZ"/>
         <segue reference="QqJ-LO-msu"/>
-        <segue reference="3mt-Hy-z2D"/>
+        <segue reference="JMC-t1-t3G"/>
     </inferredMetricsTieBreakers>
 </document>
