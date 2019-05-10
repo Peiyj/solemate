@@ -25,6 +25,9 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usernameTextField.underlined()
+        passwordTextField.underlined()
+        
         // Do any additional setup after loading the view.
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
@@ -70,13 +73,6 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
         return true
     }
     
-    /*
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    */
-    
     @IBAction func SignInButton(_ sender: Any) {
         // email nil check
         if usernameTextField.text == "" {
@@ -90,7 +86,7 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
         Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
             
             if error != nil {
-                print("Log in unsuccessful: \(error!)")
+                //print("Log in unsuccessful: \(error!)")
                 SVProgressHUD.dismiss()
                 self.alert(Title: "sign in unsuccessful", Message: "Please enter a valid email and password")
             } else {
@@ -114,5 +110,4 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
         // Pass the selected object to the new view controller.
     }
     */
-
 }

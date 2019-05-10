@@ -35,8 +35,10 @@ class LiveTrackingViewController: UserFeedback {
     @objc func updateTimer() {
         if seconds < 1 {
             timer.invalidate()
-            // send alert to indicate time's up
-            alert(Title: "Time's Up!", Message: "Good job tracking.")
+            
+            // timer finish
+            self.performSegue(withIdentifier: "showResults", sender: self)
+            // alert(Title: "Time's Up!", Message: "Good job tracking.")
         } else {
             seconds -= 1
             self.timerLabel.text = "\(seconds)"

@@ -32,6 +32,10 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
         self.passwordTextField2.delegate = self
+        usernameTextField.underlined()
+        passwordTextField.underlined()
+        passwordTextField2.underlined()
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(SignInViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(SignInViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -66,24 +70,14 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
         } else {
             textField.resignFirstResponder()
         }
-        
         return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    /*
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    */
- 
+
     @IBAction func SignUpButton(_ sender: Any) {
-        //SVProgressHUD.show()
-        
         // If username/email is null
         if usernameTextField.text == nil {
             alert(Title: "registration unsuccessful", Message: "Please enter an email")
@@ -94,11 +88,9 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
         
         // Passwords not same
         if (!passwordsEqual) {
-            // Push alert
             self.alert(Title: "registration unsuccessful", Message: "passwords not same")
         } else {
             // Passwords same
-            
             SVProgressHUD.show()
             
             //Set up a new user on our Firebase database
@@ -108,13 +100,9 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
                 
                 if (error != nil) {
                     SVProgressHUD.dismiss()
-                    print("Registration unsuccessful")
                     self.alert(Title: "registration unsuccessful", Message: (error?.localizedDescription)!)
                 } else {
-                    print("Registration Successful!")
-                    
                     SVProgressHUD.dismiss()
-                    
                     self.performSegue(withIdentifier: "goToAccountInfo", sender: self)
                 }
             }
@@ -135,7 +123,4 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
         let vc = segue.destination as! AccountInfoViewController
         vc.currUID = self.currUID
     }
-    
-    
-
 }

@@ -20,6 +20,9 @@
 		B00C7B3622695DDD0078A55D /* SolemateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B3522695DDD0078A55D /* SolemateUITests.swift */; };
 		B02A0C682272A0C800F931AB /* UserFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A0C672272A0C800F931AB /* UserFeedback.swift */; };
 		B02A0C6A2272ADEA00F931AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A0C692272ADEA00F931AB /* User.swift */; };
+		B050C0F522853ABA009B8385 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050C0F422853ABA009B8385 /* ResultsViewController.swift */; };
+		B050C0F7228544F4009B8385 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050C0F6228544F4009B8385 /* ForgotPasswordViewController.swift */; };
+		B050C0F922854E26009B8385 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050C0F822854E26009B8385 /* Helper.swift */; };
 		B07B884F227DDAC400FFEBAB /* StartOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B884E227DDAC400FFEBAB /* StartOneViewController.swift */; };
 		B07B8851227DDAD300FFEBAB /* StartTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B8850227DDAD300FFEBAB /* StartTwoViewController.swift */; };
 		B07B8853227DDAE100FFEBAB /* LiveTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B8852227DDAE100FFEBAB /* LiveTrackingViewController.swift */; };
@@ -84,6 +87,9 @@
 		B00C7B3722695DDD0078A55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02A0C672272A0C800F931AB /* UserFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedback.swift; sourceTree = "<group>"; };
 		B02A0C692272ADEA00F931AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B050C0F422853ABA009B8385 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		B050C0F6228544F4009B8385 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		B050C0F822854E26009B8385 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B07B884E227DDAC400FFEBAB /* StartOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOneViewController.swift; sourceTree = "<group>"; };
 		B07B8850227DDAD300FFEBAB /* StartTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTwoViewController.swift; sourceTree = "<group>"; };
 		B07B8852227DDAE100FFEBAB /* LiveTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackingViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +226,8 @@
 				B07B884E227DDAC400FFEBAB /* StartOneViewController.swift */,
 				B07B8850227DDAD300FFEBAB /* StartTwoViewController.swift */,
 				B07B8852227DDAE100FFEBAB /* LiveTrackingViewController.swift */,
+				B050C0F422853ABA009B8385 /* ResultsViewController.swift */,
+				B050C0F6228544F4009B8385 /* ForgotPasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 			children = (
 				B02A0C672272A0C800F931AB /* UserFeedback.swift */,
 				B02A0C692272ADEA00F931AB /* User.swift */,
+				B050C0F822854E26009B8385 /* Helper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,11 +500,14 @@
 				B0B1451F22699BB20042D1B8 /* AccountInfoViewController.swift in Sources */,
 				B0B1452722699BCF0042D1B8 /* RehabInfoViewController.swift in Sources */,
 				B07B884F227DDAC400FFEBAB /* StartOneViewController.swift in Sources */,
+				B050C0F922854E26009B8385 /* Helper.swift in Sources */,
 				B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */,
 				B00C7B1B22695DDC0078A55D /* Solemate.xcdatamodeld in Sources */,
+				B050C0F522853ABA009B8385 /* ResultsViewController.swift in Sources */,
 				B07B8851227DDAD300FFEBAB /* StartTwoViewController.swift in Sources */,
 				B0B1451B22698E9E0042D1B8 /* HomeViewController.swift in Sources */,
 				B07B8853227DDAE100FFEBAB /* LiveTrackingViewController.swift in Sources */,
+				B050C0F7228544F4009B8385 /* ForgotPasswordViewController.swift in Sources */,
 				B000A474227C2B43001A0BDD /* ActivityViewController.swift in Sources */,
 				B02A0C6A2272ADEA00F931AB /* User.swift in Sources */,
 				B0B1452322699BC00042D1B8 /* PersonalInfoViewController.swift in Sources */,

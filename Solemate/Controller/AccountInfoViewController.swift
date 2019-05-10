@@ -24,11 +24,11 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
     
     // local Variable Declarations
     var genderArr = ["Male", "Female"]
-    var ftArr = Array(2...8)
+    var ftArr = Array(3...7)
     var inArr = Array(0...11)
-    var cmArr = Array(60...250)
-    var lbArr = Array(50...300)
-    var kgArr = Array(20...150)
+    var cmArr = Array(90...200)
+    var lbArr = Array(70...300)
+    var kgArr = Array(30...150)
     var genderPicker = UIPickerView()
     var datePicker = UIDatePicker()
     var heightPicker = UIPickerView()
@@ -53,25 +53,34 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fNameTextField.underlined()
+        lNameTextField.underlined()
+        genderTextField.underlined()
+        dateTextField.underlined()
+        heightTextField.underlined()
+        weightTextField.underlined()
+        
         genderPicker.delegate = self
         genderPicker.dataSource = self
         heightPicker.delegate = self
         heightPicker.dataSource = self
         weightPicker.delegate = self
         weightPicker.dataSource = self
-        
-        genderTextField.inputView = genderPicker
-        heightTextField.inputView = heightPicker
-        weightTextField.inputView = weightPicker
-        
-        genderPicker.tag = 0
-        heightPicker.tag = 1
-        weightPicker.tag = 2
-        
         self.fNameTextField.delegate = self
         self.lNameTextField.delegate = self
         self.heightTextField.delegate = self
         self.weightTextField.delegate = self
+        
+        genderTextField.inputView = genderPicker
+        heightTextField.inputView = heightPicker
+        weightTextField.inputView = weightPicker
+        heightPicker.selectRow(3, inComponent: 0, animated: true)
+        weightPicker.selectRow(3, inComponent: 0, animated: true)
+        genderPicker.selectRow(3, inComponent: 0, animated: true)
+        
+        genderPicker.tag = 0
+        heightPicker.tag = 1
+        weightPicker.tag = 2
         
         // Toolbars for Gender, Height, Weight
         let generalToolBar = UIToolbar()
@@ -102,7 +111,6 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         } else {
             textField.resignFirstResponder()
         }
-        
         return true
     }
     
@@ -341,6 +349,20 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         }
     }
     
+    @IBAction func signInPressed(_ sender: Any) {
+        let user = Auth.auth().currentUser
+        //print(user)
+        user?.delete { error in
+            if let error = error {
+                // An error happened.
+                print(error)
+            } else {
+                // Account deleted.
+                print("successfully deleted account")
+            }
+        }
+        navigationController?.popToRootViewController(animated: true)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! PersonalInfoViewController
         vc.currFt = self.currFt

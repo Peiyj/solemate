@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate  {
     
@@ -37,6 +38,14 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        conditionTextField.underlined()
+        rehabTextField.underlined()
+        surgeryTextField.underlined()
+        goalTextField.underlined()
+        rehabTextField.delegate = self
+        goalTextField.delegate = self
+        
         // Do any additional setup after loading the view.
         conditionPicker.delegate = self
         conditionPicker.dataSource = self
@@ -56,6 +65,25 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         showDatePicker()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    // Used to restrict field to letter inputs only
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = textField.text else { return true }
+        let newLength = text.count + string.count - range.length
+        return newLength <= 2
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -66,10 +94,6 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
             performSegue(withIdentifier: "SignUpToHome", sender: self)
         }
     }
-
-    @IBAction func signInPressed(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
     
     /////////function for checking the fields///////////
     func verifyFields() -> Bool{
@@ -78,10 +102,10 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
             || (goalTextField.text == "") || (surgeryTextField.text == ""){
             // do an alert to notify the user
             alert(Title: "Error", Message: "Please fill out all fields")
-            print("Fields Not Verified")
+            //print("Fields Not Verified")
             return false
         }
-        print("Fields Verified")
+        //print("Fields Verified")
         return true
     }
     
@@ -157,6 +181,21 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
+    }
+    
+    @IBAction func signInPressed(_ sender: Any) {
+        let user = Auth.auth().currentUser
+        //print(user)
+        user?.delete { error in
+            if let error = error {
+                // An error happened.
+                print(error)
+            } else {
+                // Account deleted.
+                print("successfully deleted account")
+            }
+        }
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func endToolbar(){

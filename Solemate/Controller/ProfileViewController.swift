@@ -78,7 +78,7 @@ class ProfileViewController: UIViewController {
             
             delegate.window?.rootViewController = signInViewController
             
-            print("sign out successful")
+            //print("sign out successful")
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
