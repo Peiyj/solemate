@@ -11,8 +11,7 @@ import Charts
 class ActivityViewController: UIViewController {
 
     
-    @IBOutlet weak var barChart: BarChartView!
-    @IBOutlet weak var pieChart: PieChartView!
+    @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var InsoleButton: UIButton!
     
     let currWeight = ["On", "Off"]
@@ -21,34 +20,13 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setChartValues()
         // Do any additional setup after loading the view.
-        pieChart.chartDescription?.text = ""
-        setPieChart(dataPoints: currWeight, values: weightPercentage)
     }
-    
-    // Initializes Bar Chart Values
-    func setBarChart() {
-        
-    }
-    
-    
-    // Initiates Pie Chart Values
-    func setPieChart(dataPoints: [String], values: [Int]) {
-        
-        var dataEntries: [ChartDataEntry] = []
-        
-        for i in 0..<dataPoints.count {
-            let dataEntry1 = ChartDataEntry(x: Double(Int(i)), y: Double(values[i]), data: dataPoints[i] as AnyObject)
-            
-            dataEntries.append(dataEntry1)
-        }
-        
-        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Within Target Range")
-        
-        let pieChartData = PieChartData(dataSet: pieChartDataSet)
-        
-        pieChart.data = pieChartData
+
+    @IBAction func generateGraph(_ sender: Any) {
+        let count = Int(arc4random_uniform(20)+3)
+        setChartValues(count)
     }
     
     @IBAction func InsolePressed(_ sender: Any) {
@@ -57,14 +35,16 @@ class ActivityViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //this function will set the values of the chart
+    func setChartValues(_ count: Int  = 20){
+        let values = (0..<count).map {(i) -> ChartDataEntry in
+            let val = Double(arc4random_uniform(UInt32(count)) + 3)
+            return ChartDataEntry(x: Double(i), y : val)
+        }
+        let set1 = LineChartDataSet(values: values, label: "test 1")
+        let data = LineChartData(dataSet: set1)
+        
+        self.lineChartView.data = data
     }
-    */
 
 }
