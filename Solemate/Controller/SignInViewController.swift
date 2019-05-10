@@ -26,6 +26,26 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
         // Do any additional setup after loading the view.
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(SignInViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SignInViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // The following functions deal with readjusting the UIView when the keyboard appears
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else {return}
+        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+        let keyboardFrame = keyboardSize.cgRectValue
+        
+        if self.view.frame.origin.y == 0{
+            self.view.frame.origin.y -= keyboardFrame.height
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -34,20 +54,15 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
     }
     
     @IBAction func SignInButton(_ sender: Any) {
-        //SVProgressHUD.show()
-        
         // email nil check
         if usernameTextField.text == "" {
             self.alert(Title: "sign in unsuccessful", Message: "Please enter an email")
         }
-        
         // password nil check
         if passwordTextField.text == "" {
             self.alert(Title: "sign in unsuccessful", Message: "Please enter a password")
         }
-        
         SVProgressHUD.show()
-        
         Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
             
             if error != nil {
@@ -55,16 +70,10 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
                 SVProgressHUD.dismiss()
                 self.alert(Title: "sign in unsuccessful", Message: "Please enter a valid email and password")
             } else {
-                print("Log in successful!")
-                
                 SVProgressHUD.dismiss()
-                
                 self.performSegue(withIdentifier: "goToHome", sender: nil)
-                
             }
-            
         }
-        
     }
     
     // used for logging out later in the app
