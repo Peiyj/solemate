@@ -12,7 +12,6 @@
 		8B6A0648275AAE7A98054B34 /* Pods_SolemateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CBAB3B56DAD694DCE3F129 /* Pods_SolemateTests.framework */; };
 		B000A474227C2B43001A0BDD /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000A473227C2B43001A0BDD /* ActivityViewController.swift */; };
 		B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B1222695DDC0078A55D /* AppDelegate.swift */; };
-		B00C7B1522695DDC0078A55D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B1422695DDC0078A55D /* ViewController.swift */; };
 		B00C7B1822695DDC0078A55D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00C7B1622695DDC0078A55D /* Main.storyboard */; };
 		B00C7B1B22695DDC0078A55D /* Solemate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B00C7B1922695DDC0078A55D /* Solemate.xcdatamodeld */; };
 		B00C7B1D22695DDD0078A55D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00C7B1C22695DDD0078A55D /* Assets.xcassets */; };
@@ -72,7 +71,6 @@
 		B000A473227C2B43001A0BDD /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		B00C7B0F22695DDC0078A55D /* Solemate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solemate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00C7B1222695DDC0078A55D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B00C7B1422695DDC0078A55D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B00C7B1722695DDC0078A55D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B00C7B1A22695DDC0078A55D /* Solemate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Solemate.xcdatamodel; sourceTree = "<group>"; };
 		B00C7B1C22695DDD0078A55D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 		B0B512102269646100EEC05D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B00C7B1422695DDC0078A55D /* ViewController.swift */,
 				B00C7B1222695DDC0078A55D /* AppDelegate.swift */,
 				CD22EE5522696641005CA9F8 /* SignInViewController.swift */,
 				CD22EE57226966C6005CA9F8 /* SignUpViewController.swift */,
@@ -494,7 +491,6 @@
 				B0B1451F22699BB20042D1B8 /* AccountInfoViewController.swift in Sources */,
 				B0B1452722699BCF0042D1B8 /* RehabInfoViewController.swift in Sources */,
 				B07B884F227DDAC400FFEBAB /* StartOneViewController.swift in Sources */,
-				B00C7B1522695DDC0078A55D /* ViewController.swift in Sources */,
 				B00C7B1322695DDC0078A55D /* AppDelegate.swift in Sources */,
 				B00C7B1B22695DDC0078A55D /* Solemate.xcdatamodeld in Sources */,
 				B07B8851227DDAD300FFEBAB /* StartTwoViewController.swift in Sources */,

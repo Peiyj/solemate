@@ -45,6 +45,8 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
     var currLname = ""
     var currDate = ""
     var currUID = ""
+    let screenWidth  = UIScreen.main.fixedCoordinateSpace.bounds.width
+    let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
     
     let db = Firestore.firestore()
     
@@ -85,6 +87,23 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         heightTextField.inputAccessoryView = generalToolBar
         weightTextField.inputAccessoryView = generalToolBar
         showDatePicker()
+    }
+    
+    // Exits keyboard view when touching anywhere else on the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return true
     }
     
     /**

@@ -18,7 +18,9 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
+    var activeTextField: UITextField!
+    let screenWidth  = UIScreen.main.fixedCoordinateSpace.bounds.width
+    let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +34,17 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
     }
     
     // The following functions deal with readjusting the UIView when the keyboard appears
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo else {return}
         guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
         let keyboardFrame = keyboardSize.cgRectValue
         
         if self.view.frame.origin.y == 0{
-            self.view.frame.origin.y -= keyboardFrame.height
+            self.view.frame.origin.y -= (keyboardFrame.height - screenHeight/4)
         }
     }
     
@@ -48,10 +54,28 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    /*
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
+    */
     
     @IBAction func SignInButton(_ sender: Any) {
         // email nil check

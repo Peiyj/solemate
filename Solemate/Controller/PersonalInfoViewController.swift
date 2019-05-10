@@ -56,6 +56,10 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         showDatePicker()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func onFinishPressed(_ sender: Any) {
         if verifyFields() {
             assignFields()
