@@ -959,12 +959,9 @@ target range. Please adjust the weight based on the feedback.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
         <segue reference="M6F-nf-qkQ"/>
-=======
         <segue reference="o5Y-0n-sfA"/>
         <segue reference="4Wm-Oa-sA5"/>
->>>>>>> f6644fea2d029abf74443b0e64dab33a3eb8642d
         <segue reference="52f-NG-ytK"/>
         <segue reference="LAF-vg-zcc"/>
         <segue reference="JMC-t1-t3G"/>
