@@ -133,16 +133,18 @@ Development
 Design
 - [x] Conduct user tests
 - [x] Refine wireframes
-- [ ] Start creating hi fi prototypes
+- [x] Start creating hi fi prototypes
+- [x] discuss feasibility of design\
 
 Development
 - [x] figure how to pass data between view controllers. Don't add user data to Firebase until we have finished sign up process
-- [ ] sign up button on sign up page broken SIGABRT
+- [x] sign up button on sign up page broken SIGABRT
 - [x] fix logout crashing bug
-- [ ] fix rounding error in AccountInfo View Controller
+- [x] fix rounding error in AccountInfo View Controller
 - [ ] button functionality must trigger bluetooth device
 - [ ] bluetooth activity must be turned on
-- [ ] create an in-app timer to count the tracking period
+- [x] create an in-app timer to count the tracking period
 - [ ] receive data from bluetooth transmitter
 - [ ] convert bitstream of input data to a % of body weight inputed onto the smart insole
+- [x] begin adding template for UI. (Image Views, UITextField Styling) 
 
