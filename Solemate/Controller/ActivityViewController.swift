@@ -30,7 +30,7 @@ class ActivityViewController: UIViewController {
     }
     
     @IBAction func InsolePressed(_ sender: Any) {
-        self.dismiss(animated: true) {
+        self.dismiss(animated: false) {
             print("dismissed")
         }
     }

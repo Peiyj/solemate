@@ -32,19 +32,12 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        
         // Displaying user information
         let docRef = db.collection("users").document((Auth.auth().currentUser?.uid)!)
-        
-        //print((Auth.auth().currentUser?.uid)!)
         
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 // Data exists and was retrieved
-                //let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                //print("Document data: \(dataDescription)")
-                
                 let heightFt = document["heightFt"]
                 let heightIn = document["heightIn"]
                 

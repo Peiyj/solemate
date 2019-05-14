@@ -20,6 +20,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var finishButton: UIButton!
     
     //local variable declarations
+    var rehabSessions = [[String]]()
     var datePicker = UIDatePicker()
     var conditionArr = ["ACLtear", "Gary"]
     var conditionPicker = UIPickerView()
@@ -33,6 +34,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     var currLname = ""
     var currDate = ""
     var currUID = ""
+    var numOfSessions: Int = 0
     
     let db = Firestore.firestore()
     
@@ -198,14 +200,60 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         navigationController?.popToRootViewController(animated: true)
     }
     
+    // Add new sessions to current View Controller
+    @IBAction func addSessionPressed(_ sender: Any) {
+        
+        if numOfSessions > 3 {
+            let alertError = UIAlertController(title: "Error", message: "Cannot add more than 4 sessions", preferredStyle: .alert)
+            alertError.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alertError] (_) in
+                print("Added too many sessions")
+            }))
+            self.present(alertError, animated: true, completion: nil)
+        }
+        
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Session", message: "Add a new session", preferredStyle: .alert)
+        
+        //2. Add the text field.
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter session time (in weeks)"
+            textField.keyboardType = .decimalPad
+        }
+        alert.addTextField { (textField2) in
+            textField2.placeholder = "Enter goal body weight %"
+            textField2.keyboardType = .decimalPad
+        }
+        // Cancel button
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
+        alert.addAction(cancel)
+        // 3. Grab the value from the text field
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            let textField2 = alert?.textFields![1]
+            
+            // Error check
+            if textField?.text == "" || textField2?.text == "" {
+                return
+            }
+            
+            print("Text field: \(textField?.text)")
+            print("Text field2: \(textField2?.text)")
+            let sessionItem = [textField?.text, textField2?.text]
+            self.rehabSessions.append(sessionItem as! [String])
+            self.numOfSessions += 1
+            print("rehabSessions: \(self.rehabSessions)")
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @objc func endToolbar(){
         self.view.endEditing(true)
-    
+    }
+        
     
     // MARK: - Navigation
-
-
-        
      // In a storyboard-based application, you will often want to do a little preparation before navigation
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -213,5 +261,5 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         // Pass the selected object to the new view controller.
     }
     */
-    }
+    
 }
