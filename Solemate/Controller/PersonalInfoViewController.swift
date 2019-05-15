@@ -13,9 +13,7 @@ import FirebaseAuth
 class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate  {
     
     //create IBOutlet objects
-    @IBOutlet weak var rehabTextField: UITextField!
     @IBOutlet weak var conditionTextField: UITextField!
-    @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var surgeryTextField: UITextField!
     @IBOutlet weak var finishButton: UIButton!
     
@@ -42,11 +40,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         
         conditionTextField.underlined()
-        rehabTextField.underlined()
         surgeryTextField.underlined()
-        goalTextField.underlined()
-        rehabTextField.delegate = self
-        goalTextField.delegate = self
         
         // Do any additional setup after loading the view.
         conditionPicker.delegate = self
@@ -100,8 +94,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     /////////function for checking the fields///////////
     func verifyFields() -> Bool{
         // Check to see if all the fields are filled out
-        if (rehabTextField.text == "") || (conditionTextField.text == "")
-            || (goalTextField.text == "") || (surgeryTextField.text == ""){
+        if (conditionTextField.text == "") || (surgeryTextField.text == ""){
             // do an alert to notify the user
             alert(Title: "Error", Message: "Please fill out all fields")
             //print("Fields Not Verified")
@@ -128,8 +121,6 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
             "weightKg": String(currKg),
             "weightLb": String(currLb),
             "date": currDate,
-            "rehabTime" : rehabTextField.text!,
-            "goalBodyWeight" : goalTextField.text!,
             "condition" : conditionTextField.text!,
             "surgeryDate" : surgeryTextField.text!
         ]) { err in

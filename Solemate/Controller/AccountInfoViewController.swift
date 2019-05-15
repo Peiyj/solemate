@@ -349,6 +349,22 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         }
     }
     
+    @IBAction func onBackPressed(_ sender: Any) {
+        /*
+        let user = Auth.auth().currentUser
+        
+        user?.delete { error in
+            if let error = error {
+                // An error happened.
+                print(error)
+            } else {
+                // Account deleted.
+                print("successfully deleted account")
+            }
+        }
+        */
+    }
+    
     @IBAction func signInPressed(_ sender: Any) {
         let user = Auth.auth().currentUser
         //print(user)
@@ -361,20 +377,22 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
                 print("successfully deleted account")
             }
         }
-        navigationController?.popToRootViewController(animated: true)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! PersonalInfoViewController
-        vc.currFt = self.currFt
-        vc.currIn = self.currIn
-        vc.currCm = self.currCm
-        vc.currKg = self.currKg
-        vc.currLb = self.currLb
-        vc.currGender = self.currGender
-        vc.currFname = self.currFname
-        vc.currLname = self.currLname
-        vc.currDate = self.currDate
-        vc.currUID = self.currUID
+
+        if segue.identifier == "goToPersonalInfo" {
+            let vc = segue.destination as! PersonalInfoViewController
+            vc.currFt = self.currFt
+            vc.currIn = self.currIn
+            vc.currCm = self.currCm
+            vc.currKg = self.currKg
+            vc.currLb = self.currLb
+            vc.currGender = self.currGender
+            vc.currFname = self.currFname
+            vc.currLname = self.currLname
+            vc.currDate = self.currDate
+            vc.currUID = self.currUID
+        }
     }
     // End Navigation
     
