@@ -18,6 +18,9 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var emailImage: UIImageView!
+    @IBOutlet weak var lockImage: UIImageView!
+    
     var activeTextField: UITextField!
     let screenWidth  = UIScreen.main.fixedCoordinateSpace.bounds.width
     let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
@@ -28,7 +31,6 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
         usernameTextField.underlined()
         passwordTextField.underlined()
         
-        // Do any additional setup after loading the view.
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
         
@@ -55,10 +57,12 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+        updateImageStatus()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        updateImageStatus()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -70,7 +74,26 @@ class SignInViewController: UserFeedback, UITextFieldDelegate{
             textField.resignFirstResponder()
         }
         
+        updateImageStatus()
+        
         return true
+    }
+    
+    // function updates email and lock icons
+    func updateImageStatus() {
+        // Changing the image icons
+        if (usernameTextField.text?.isEmpty)! {
+            emailImage.image = UIImage(named: "email-open")
+        } else {
+            print("change email to black")
+            emailImage.image = UIImage(named: "email-close")
+        }
+        if (passwordTextField.text?.isEmpty)! {
+            lockImage.image = UIImage(named: "lock-open")
+        } else {
+            print("change lock to black")
+            lockImage.image = UIImage(named: "lock-close")
+        }
     }
     
     @IBAction func SignInButton(_ sender: Any) {

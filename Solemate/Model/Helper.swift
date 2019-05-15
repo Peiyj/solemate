@@ -2,6 +2,8 @@
 //  Helper.swift
 //  Solemate
 //
+// This class is an extension to UITextField, creating a bottom border.
+//
 //  Created by Steven Tran on 5/9/19.
 //  Copyright © 2019 SolemateInc. All rights reserved.
 //

@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var surgeryDateLabel: UILabel!
     @IBOutlet weak var rehabTimeLabel: UILabel!
     @IBOutlet weak var signOutButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
     
     var window: UIWindow?
     
@@ -52,6 +53,7 @@ class ProfileViewController: UIViewController {
                 self.conditionLabel.text = document["condition"] as? String
                 self.surgeryDateLabel.text = document["surgeryDate"] as? String
                 self.rehabTimeLabel.text = document["rehabTime"] as? String
+                self.nameLabel.text = (self.firstNameLabel.text!) + "!"
             } else {
                 print("Document does not exist")
             }

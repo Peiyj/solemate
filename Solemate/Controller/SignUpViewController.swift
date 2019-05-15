@@ -21,6 +21,10 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordTextField2: UITextField!
     
+    @IBOutlet weak var emailImage: UIImageView!
+    @IBOutlet weak var lockImage1: UIImageView!
+    @IBOutlet weak var lockImage2: UIImageView!
+    
     var currUID = ""
     let screenWidth  = UIScreen.main.fixedCoordinateSpace.bounds.width
     let screenHeight = UIScreen.main.fixedCoordinateSpace.bounds.height
@@ -60,6 +64,7 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+        updateImageStatus()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -70,11 +75,13 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
         } else {
             textField.resignFirstResponder()
         }
+        updateImageStatus()
         return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        updateImageStatus()
     }
 
     @IBAction func SignUpButton(_ sender: Any) {
@@ -109,6 +116,27 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
         } // end-else
     }
 
+    func updateImageStatus() {
+        // Changing the image icons
+        if (usernameTextField.text?.isEmpty)! {
+            emailImage.image = UIImage(named: "email-open")
+        } else {
+            print("change email to black")
+            emailImage.image = UIImage(named: "email-close")
+        }
+        if (passwordTextField.text?.isEmpty)! {
+            lockImage1.image = UIImage(named: "lock-open")
+        } else {
+            print("change lock to black")
+            lockImage1.image = UIImage(named: "lock-close")
+        }
+        if (passwordTextField2.text?.isEmpty)! {
+            lockImage2.image = UIImage(named: "lock-open")
+        } else {
+            print("change lock to black")
+            lockImage2.image = UIImage(named: "lock-close")
+        }
+    }
     
     // MARK: - Navigation
 

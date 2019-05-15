@@ -7,16 +7,48 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UserFeedback, UITextFieldDelegate {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        emailTextField.underlined()
+        emailTextField.delegate = self
     }
     
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    @IBAction func onSubmitPressed(_ sender: Any) {
+        SVProgressHUD.show()
+        if emailTextField.text == "" {
+            self.alert(Title: "Error", Message: "Please enter an email")
+        }
+        
+        Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { error in
+            
+            if error != nil {
+                SVProgressHUD.dismiss()
+                self.alert(Title: "Error", Message: (error?.localizedDescription)!)
+            } else {
+                SVProgressHUD.dismiss()
+                print("successfully emailed")
+                self.performSegue(withIdentifier: "backToRoot", sender: self)
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

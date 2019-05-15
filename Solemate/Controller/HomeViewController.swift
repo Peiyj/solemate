@@ -33,8 +33,13 @@ class HomeViewController: UIViewController {
     
 
     // Function used to connect / disconnect Bluetooth Device
-    @IBAction func onDisconnectPressed(_ sender: Any) {
+    @IBAction func connectPressed(_ sender: Any) {
+        let url = URL(string: "App-Prefs:root=Bluetooth")
+        let app = UIApplication.shared
+        app.openURL(url!)
+        UIApplication.shared.openURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
     }
+    
     
     /*
     // MARK: - Navigation
