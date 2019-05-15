@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Solemate/Controller/PersonalInfoViewController.swift"
-            timestampString = "579593805.387356"
+            timestampString = "579652090.210407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "cancelDatePicker()"
             landmarkType = "7">
          </BreakpointContent>
@@ -33,6 +33,84 @@
             endingLineNumber = "11"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Solemate/Controller/PersonalInfoViewController.swift"
+            timestampString = "579652090.210927"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "PersonalInfoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Solemate.PersonalInfoViewController.numOfSessions.getter : Swift.Int"
+                  moduleName = "Solemate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/steven/Desktop/Solemate/Solemate/Controller/PersonalInfoViewController.swift"
+                  timestampString = "579652065.9156491"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Solemate.PersonalInfoViewController.numOfSessions.setter : Swift.Int"
+                  moduleName = "Solemate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/steven/Desktop/Solemate/Solemate/Controller/PersonalInfoViewController.swift"
+                  timestampString = "579652065.9195499"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Solemate.PersonalInfoViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Solemate.PersonalInfoViewController"
+                  moduleName = "Solemate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/steven/Desktop/Solemate/Solemate/Controller/PersonalInfoViewController.swift"
+                  timestampString = "579652065.923683"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1804">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Solemate.PersonalInfoViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Solemate.PersonalInfoViewController&gt;"
+                  moduleName = "Solemate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/steven/Desktop/Solemate/Solemate/Controller/PersonalInfoViewController.swift"
+                  timestampString = "579652065.9279391"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1780">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

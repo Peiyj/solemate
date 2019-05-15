@@ -10,12 +10,14 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate  {
+class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource  {
     
     //create IBOutlet objects
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var conditionTextField: UITextField!
     @IBOutlet weak var surgeryTextField: UITextField!
     @IBOutlet weak var finishButton: UIButton!
+
     
     //local variable declarations
     var rehabSessions = [[String]]()
@@ -42,6 +44,10 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         conditionTextField.underlined()
         surgeryTextField.underlined()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        
         // Do any additional setup after loading the view.
         conditionPicker.delegate = self
         conditionPicker.dataSource = self
@@ -61,6 +67,34 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         showDatePicker()
     }
     
+    /* TABLEVIEW CODE */
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("row count: \(rehabSessions.count)")
+        return rehabSessions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCell") as! SessionCell
+        
+        let session = rehabSessions[indexPath.row]
+        let weight = session[1] + " % Body Weight"
+        let weeks = session[0] + " Weeks"
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 70
+        
+        cell.weekLabel!.text = weeks
+        cell.weightLabel!.text = weight
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    /* END TABLEVIEW CODE */
+    
+    /* TEXTFIELD CODE */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag = textField.tag + 1
         
@@ -79,6 +113,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         let newLength = text.count + string.count - range.length
         return newLength <= 2
     }
+    /* END TEXTFIELD CODE */
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -97,10 +132,11 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         if (conditionTextField.text == "") || (surgeryTextField.text == ""){
             // do an alert to notify the user
             alert(Title: "Error", Message: "Please fill out all fields")
-            //print("Fields Not Verified")
             return false
         }
-        //print("Fields Verified")
+        if rehabSessions.count == 0 {
+            alert(Title: "Error", Message: "Please add at least 1 rehab session")
+        }
         return true
     }
     
@@ -217,7 +253,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         // Cancel button
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
         alert.addAction(cancel)
-        // 3. Grab the value from the text field
+        // OK Button
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
             let textField2 = alert?.textFields![1]
@@ -227,12 +263,11 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
                 return
             }
             
-            print("Text field: \(textField?.text)")
-            print("Text field2: \(textField2?.text)")
             let sessionItem = [textField?.text, textField2?.text]
             self.rehabSessions.append(sessionItem as! [String])
             self.numOfSessions += 1
             print("rehabSessions: \(self.rehabSessions)")
+            self.tableView.reloadData()
         }))
         
         // 4. Present the alert.

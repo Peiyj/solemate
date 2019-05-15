@@ -10,9 +10,8 @@ import UIKit
 import CoreBluetooth
 import Charts
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
 
-    
     @IBOutlet weak var deviceStatusButton: UIButton!
     @IBOutlet weak var deviceNameLabel: UILabel!
     @IBOutlet weak var barChart: BarChartView!
@@ -31,31 +30,70 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Bluetooth manager setup
+        manager.delegate = self
+        // create concurrent background queue for central
+        let centralQueue: DispatchQueue = DispatchQueue(label: "com.iosbrain.centralQueueName", attributes: .concurrent)
+        
+        // manage, and collect data from peripherals
+        manager = CBCentralManager(delegate: self, queue: centralQueue)
+        
+        // Chart Set up
         barChart.noDataText = "You need to provide data for the chart."
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let unitsSold = [30.0, 24.0, 31.0, 30.0, 29.0, 32.0, 41.0, 18.0, 22.0, 4.0, 51.0, 31.0]
+        let label = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]
+        let unitsSold = [30.0, 24.0, 31.0, 30.0, 29.0, 32.0, 31.0]
         
-        setChart(dataPoints: months, values: unitsSold)
+        setChart(dataPoints: unitsSold, values: label)
     }
-    
-    func setChart(dataPoints: [String], values: [Double]) {
+
+    /* CHART FUNCTIONALITY */
+    func setChart(dataPoints: [Double], values: [Double]) {
         barChart.noDataText = "You need to provide data for the chart."
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-            
-            let dataEntry = BarChartDataEntry(x: values[i], y: Double(i))
+            let dataEntry = BarChartDataEntry(x: values[i], y: dataPoints[i])
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Units Sold")
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "% Weight applied to injured foot")
         let chartData = BarChartData(dataSet: chartDataSet)
-        
+        barChart.xAxis.labelPosition = .bottom
         barChart.data = chartData
+        barChart.animate(xAxisDuration: 2.0)
+        barChart.animate(yAxisDuration: 2.0)
+        
+        let limline = ChartLimitLine(limit: 30.0, label: "Target % Weight")
+        barChart.rightAxis.addLimitLine(limline)
+    }
+    /* END CHART FUNCTIONALITY */
+
+    
+    /* CORE-BLUETOOTH FUNCTIONALITY */
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        // State management for Central
+        switch central.state {
+            
+        case .unknown:
+            print("Bluetooth status is UNKNOWN")
+            bluetoothOffLabel.alpha = 1.0
+        case .resetting:
+            print("Bluetooth status is RESETTING")
+            bluetoothOffLabel.alpha = 1.0
+        case .unsupported:
+            print("Bluetooth status is UNSUPPORTED")
+            bluetoothOffLabel.alpha = 1.0
+        case .unauthorized:
+            print("Bluetooth status is UNAUTHORIZED")
+            bluetoothOffLabel.alpha = 1.0
+        case .poweredOff:
+            print("Bluetooth status is POWERED OFF")
+            bluetoothOffLabel.alpha = 1.0
+        case .poweredOn:
+            print("Bluetooth status is POWERED ON")
     }
     
-
     // Function used to connect / disconnect Bluetooth Device
     @IBAction func connectPressed(_ sender: Any) {
         let url = URL(string: "App-Prefs:root=Bluetooth")
@@ -63,6 +101,7 @@ class HomeViewController: UIViewController {
         app.openURL(url!)
         UIApplication.shared.openURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
     }
+    /* END CORE-BLUETOOTH FUNCTIONALITY */
     
     
     /*
