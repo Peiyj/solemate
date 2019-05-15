@@ -121,19 +121,16 @@ class SignUpViewController: UserFeedback, UITextFieldDelegate {
         if (usernameTextField.text?.isEmpty)! {
             emailImage.image = UIImage(named: "email-open")
         } else {
-            print("change email to black")
             emailImage.image = UIImage(named: "email-close")
         }
         if (passwordTextField.text?.isEmpty)! {
             lockImage1.image = UIImage(named: "lock-open")
         } else {
-            print("change lock to black")
             lockImage1.image = UIImage(named: "lock-close")
         }
         if (passwordTextField2.text?.isEmpty)! {
             lockImage2.image = UIImage(named: "lock-open")
         } else {
-            print("change lock to black")
             lockImage2.image = UIImage(named: "lock-close")
         }
     }

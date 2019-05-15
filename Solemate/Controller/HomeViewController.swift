@@ -31,7 +31,6 @@ class HomeViewController: UIViewController, CBCentralManagerDelegate, CBPeripher
         super.viewDidLoad()
 
         // Bluetooth manager setup
-        manager.delegate = self
         // create concurrent background queue for central
         let centralQueue: DispatchQueue = DispatchQueue(label: "com.iosbrain.centralQueueName", attributes: .concurrent)
         
@@ -75,23 +74,19 @@ class HomeViewController: UIViewController, CBCentralManagerDelegate, CBPeripher
         // State management for Central
         switch central.state {
             
-        case .unknown:
-            print("Bluetooth status is UNKNOWN")
-            bluetoothOffLabel.alpha = 1.0
-        case .resetting:
-            print("Bluetooth status is RESETTING")
-            bluetoothOffLabel.alpha = 1.0
-        case .unsupported:
-            print("Bluetooth status is UNSUPPORTED")
-            bluetoothOffLabel.alpha = 1.0
-        case .unauthorized:
-            print("Bluetooth status is UNAUTHORIZED")
-            bluetoothOffLabel.alpha = 1.0
-        case .poweredOff:
-            print("Bluetooth status is POWERED OFF")
-            bluetoothOffLabel.alpha = 1.0
-        case .poweredOn:
-            print("Bluetooth status is POWERED ON")
+            case .unknown:
+                print("Bluetooth status is UNKNOWN")
+            case .resetting:
+                print("Bluetooth status is RESETTING")
+            case .unsupported:
+                print("Bluetooth status is UNSUPPORTED")
+            case .unauthorized:
+                print("Bluetooth status is UNAUTHORIZED")
+            case .poweredOff:
+                print("Bluetooth status is POWERED OFF")
+            case .poweredOn:
+                print("Bluetooth status is POWERED ON")
+        } // end switch statement
     }
     
     // Function used to connect / disconnect Bluetooth Device

@@ -69,7 +69,6 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     
     /* TABLEVIEW CODE */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("row count: \(rehabSessions.count)")
         return rehabSessions.count
     }
     
@@ -119,6 +118,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         self.view.endEditing(true)
     }
     
+    // Finish sign up process
     @IBAction func onFinishPressed(_ sender: Any) {
         if verifyFields() {
             assignFields()
@@ -158,7 +158,11 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
             "weightLb": String(currLb),
             "date": currDate,
             "condition" : conditionTextField.text!,
-            "surgeryDate" : surgeryTextField.text!
+            "surgeryDate" : surgeryTextField.text!,
+            "session1" : rehabSessions[0],
+            "session2" : rehabSessions.count > 1 ?rehabSessions[1] : nil!,
+            "session3" : rehabSessions.count > 2 ?rehabSessions[2] : nil!,
+            "session4" : rehabSessions.count > 3 ?rehabSessions[3] : nil!
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -214,7 +218,6 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     
     @IBAction func signInPressed(_ sender: Any) {
         let user = Auth.auth().currentUser
-        //print(user)
         user?.delete { error in
             if let error = error {
                 // An error happened.
@@ -248,7 +251,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         }
         alert.addTextField { (textField2) in
             textField2.placeholder = "Enter goal body weight %"
-            textField2.keyboardType = .decimalPad
+            textField2.keyboardType = .numberPad
         }
         // Cancel button
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
