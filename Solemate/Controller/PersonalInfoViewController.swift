@@ -22,7 +22,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     //local variable declarations
     var rehabSessions = [[String]]()
     var datePicker = UIDatePicker()
-    var conditionArr = ["ACLtear", "Gary"]
+    var conditionArr = ["ACLtear", "Ankle Osteochondritis Dissecans", "Ankle Sprain", "Hip Impingement", "Knee meniscus tear", "MCL tear", "PCL tear"]
     var conditionPicker = UIPickerView()
     var currFt = 0
     var currIn = 0
@@ -160,9 +160,9 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
             "condition" : conditionTextField.text!,
             "surgeryDate" : surgeryTextField.text!,
             "session1" : rehabSessions[0],
-            "session2" : rehabSessions.count > 1 ?rehabSessions[1] : nil!,
-            "session3" : rehabSessions.count > 2 ?rehabSessions[2] : nil!,
-            "session4" : rehabSessions.count > 3 ?rehabSessions[3] : nil!
+            "session2" : rehabSessions.count >= 2 ? rehabSessions[1] : nil,
+            "session3" : rehabSessions.count >= 3 ? rehabSessions[2] : nil,
+            "session4" : rehabSessions.count == 4 ? rehabSessions[3] : nil
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

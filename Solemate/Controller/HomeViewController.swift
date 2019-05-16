@@ -9,6 +9,7 @@
 import UIKit
 import CoreBluetooth
 import Charts
+import FirebaseFirestore
 
 class HomeViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
 
@@ -25,7 +26,10 @@ class HomeViewController: UIViewController, CBCentralManagerDelegate, CBPeripher
 //    var char1 = "FFE1"
 //    let deviceName = "HMSoft"
     
-    var months: [String]!
+    var months: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    let db = Firestore.firestore()
+    var weightData: [Double] = [30.0, 24.0, 31.0, 30.0, 29.0, 32.0, 31.0]
+    let label = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +41,20 @@ class HomeViewController: UIViewController, CBCentralManagerDelegate, CBPeripher
         // manage, and collect data from peripherals
         manager = CBCentralManager(delegate: self, queue: centralQueue)
         
-        // Chart Set up
-        barChart.noDataText = "You need to provide data for the chart."
-        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let label = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]
-        let unitsSold = [30.0, 24.0, 31.0, 30.0, 29.0, 32.0, 31.0]
+        // Displaying user information
+        let docRef = db.collection("weightData").document("defaultWeightData")
         
-        setChart(dataPoints: unitsSold, values: label)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                self.weightData = document["weekData"] as! [Double]
+                print("Weight data pulled from Firestore: \(self.weightData)")
+                // Chart Set up
+                self.barChart.noDataText = "Data could not be retrieved. Try checking your network connection."
+                self.setChart(dataPoints: self.weightData, values: self.label)
+            } else {
+                print("Document does not exist")
+            }
+        }
     }
 
     /* CHART FUNCTIONALITY */

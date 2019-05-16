@@ -12,7 +12,6 @@ import FirebaseFirestore
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
@@ -54,22 +53,18 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.nameLabel.text = (self.firstNameLabel.text!) + "!"
                 // Populating RehabSessions Array
                 if let session1 = document["session1"] as? [String] {
-                    print("Enter session1")
                     self.rehabSessions.append(document["session1"] as! [String])
                     self.tableView.reloadData()
                 }
                 if let session2 = document["session2"] as? [String] {
-                    print("Enter session2")
                     self.rehabSessions.append(document["session2"] as! [String])
                     self.tableView.reloadData()
                 }
                 if let session3 = document["session3"] as? [String] {
-                    print("Enter session3")
                     self.rehabSessions.append(document["session3"] as! [String])
                     self.tableView.reloadData()
                 }
                 if let session4 = document["session4"] as? [String] {
-                    print("Enter session4")
                     self.rehabSessions.append(document["session4"] as! [String])
                     self.tableView.reloadData()
                 }
@@ -80,7 +75,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        print(rehabSessions)
     } // end viewDidLoad
     
     /* TABLEVIEW CODE */

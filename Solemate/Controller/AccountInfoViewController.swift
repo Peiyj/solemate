@@ -177,32 +177,9 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
      - Returns: a Bool value indicating if all the text fields have input
      */
     func verifyFields() -> Bool{
-        //        Check to see if all the fields are filled out
-        
-        // name edge cases: empty
-        // name fields are already limited to letters
-        if (fNameTextField.text == "") {
-            alert(Title: "Error", Message: "Please enter your first name")
-            return false
-        }
-        if (lNameTextField.text == "") {
-            alert(Title: "Error", Message: "Please enter your last name")
-            return false
-        }
-        if (genderTextField.text == "") {
-            alert(Title: "Error", Message: "Please enter your gender")
-            return false
-        }
-        if (dateTextField.text == "") {
-            alert(Title: "Error", Message: "Please enter a valid date")
-            return false
-        }
-        if (heightTextField.text == "") {
-            alert(Title: "Error", Message: "Please enter your height")
-            return false
-        }
-        if (weightTextField.text == "") {
-            alert(Title: "Error", Message: "Please enter your weight")
+        // Check to see if all the fields are filled out
+        if (fNameTextField.text == "") || (lNameTextField.text == "") || (genderTextField.text == "") || (dateTextField.text == "") || (heightTextField.text == "") || (weightTextField.text == "") {
+            alert(Title: "Error", Message: "Please fill out all the fields")
             return false
         }
         return true
@@ -297,7 +274,8 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
     // End UIPickerView Functions
     
     
-    // Mark: - SegmentedController Functions
+    // Mark: - SegmentedController Functions //
+    
     @IBAction func changeHeight(_ sender: Any) {
         // TODO: - change the weight value within the text field if there already exists input in it
         if (heightController.selectedSegmentIndex == 0) {
@@ -337,7 +315,7 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
     
     
     
-    // MARK: - Navigation
+    // MARK: - Navigation //
     
     // Proceeds to the last stage of signing up
     @IBAction func nextOnPress(_ sender: Any) {
@@ -349,22 +327,12 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         }
     }
     
+    // Doesn't currently do anything
     @IBAction func onBackPressed(_ sender: Any) {
-        /*
-        let user = Auth.auth().currentUser
-        
-        user?.delete { error in
-            if let error = error {
-                // An error happened.
-                print(error)
-            } else {
-                // Account deleted.
-                print("successfully deleted account")
-            }
-        }
-        */
+ 
     }
     
+    // Deletes user from Firebase if they navigate back to sign in page
     @IBAction func signInPressed(_ sender: Any) {
         let user = Auth.auth().currentUser
         //print(user)
@@ -378,8 +346,9 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
             }
         }
     }
+    
+    // Used for going into the next sign up page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier == "goToPersonalInfo" {
             let vc = segue.destination as! PersonalInfoViewController
             vc.currFt = self.currFt
