@@ -247,7 +247,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         //2. Add the text field.
         alert.addTextField { (textField) in
             textField.placeholder = "Enter session time (in weeks)"
-            textField.keyboardType = .decimalPad
+            textField.keyboardType = .numberPad
         }
         alert.addTextField { (textField2) in
             textField2.placeholder = "Enter goal body weight %"
@@ -256,6 +256,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         // Cancel button
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
         alert.addAction(cancel)
+        
         // OK Button
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]

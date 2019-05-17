@@ -84,7 +84,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCell") as! SessionCell
-        
         let session = rehabSessions[indexPath.row]
         let weight = session[1] + " % Body Weight"
         let weeks = session[0] + " Weeks"

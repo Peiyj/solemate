@@ -1185,6 +1185,18 @@ target range. Please adjust the weight based on the feedback.</string>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.47843137254901957" green="0.68627450980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="0.0" height="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.14999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1261,6 +1273,16 @@ target range. Please adjust the weight based on the feedback.</string>
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBorder" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.14999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addSessionPressed:" destination="ven-Pi-kcK" eventType="touchUpInside" id="kYI-Pu-557"/>
@@ -1311,6 +1333,10 @@ target range. Please adjust the weight based on the feedback.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="personal-info" translatesAutoresizingMaskIntoConstraints="NO" id="cuN-48-PSA">
+                                <rect key="frame" x="34" y="120" width="321" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="0nC-MV-VPh">
                                 <rect key="frame" x="-40" y="-180" width="423" height="337"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1347,6 +1373,18 @@ target range. Please adjust the weight based on the feedback.</string>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.47843137250000001" green="0.68627450980000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="0.0" height="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.14999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1501,14 +1539,6 @@ target range. Please adjust the weight based on the feedback.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Personal Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKw-Lz-525">
-                                <rect key="frame" x="44" y="168" width="286" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87188689720000001" green="0.87188689720000001" blue="0.87188689720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Condition" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UN-43-N0f">
                                 <rect key="frame" x="154" y="378" width="176" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1537,7 +1567,7 @@ target range. Please adjust the weight based on the feedback.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyF-cq-TJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="446" y="1760"/>
+            <point key="canvasLocation" x="445.60000000000002" y="1759.3596059113302"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0dg-Me-7Ce">
@@ -1560,15 +1590,16 @@ target range. Please adjust the weight based on the feedback.</string>
     <resources>
         <image name="Group 144" width="375.66665649414062" height="334"/>
         <image name="S-logo" width="94" height="154"/>
-        <image name="bg" width="470" height="366"/>
-        <image name="done" width="111.33333587646484" height="15.666666984558105"/>
+        <image name="bg" width="469.33334350585938" height="365.66665649414062"/>
+        <image name="done" width="334" height="48"/>
         <image name="email-open" width="37.5" height="37.5"/>
         <image name="full-logo" width="212" height="56"/>
         <image name="home" width="162" height="182"/>
         <image name="home-3" width="17" height="17"/>
         <image name="home-4" width="17" height="17"/>
         <image name="lock-open" width="37.5" height="37.5"/>
-        <image name="not-done" width="111.33333587646484" height="15.666666984558105"/>
+        <image name="not-done" width="334" height="52"/>
+        <image name="personal-info" width="346" height="259"/>
         <image name="plus-r" width="36" height="36"/>
         <image name="single-3" width="16.5" height="16.5"/>
         <image name="single-4" width="16.5" height="16.5"/>
@@ -1581,7 +1612,7 @@ target range. Please adjust the weight based on the feedback.</string>
         <segue reference="pD5-mi-hyI"/>
         <segue reference="M6F-nf-qkQ"/>
         <segue reference="52f-NG-ytK"/>
-        <segue reference="LAF-vg-zcc"/>
+        <segue reference="pvk-yV-e48"/>
         <segue reference="s2e-Fs-Xbb"/>
         <segue reference="3uG-N8-BH1"/>
         <segue reference="8SQ-ln-swW"/>
