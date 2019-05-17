@@ -213,6 +213,13 @@
 			path = SolemateUITests;
 			sourceTree = "<group>";
 		};
+		B045BC48228E7BCE005128FE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B0B512102269646100EEC05D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +264,7 @@
 		B0B51213226964D500EEC05D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B045BC48228E7BCE005128FE /* Fonts */,
 				B00C7B1922695DDC0078A55D /* Solemate.xcdatamodeld */,
 				B00C7B1C22695DDD0078A55D /* Assets.xcassets */,
 			);
