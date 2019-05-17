@@ -89,7 +89,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let weeks = session[0] + " Weeks"
         
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 70
+        tableView.estimatedRowHeight = 65
         
         cell.weekLabel!.text = weeks
         cell.weightLabel!.text = weight
@@ -98,7 +98,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 65
     }
     /* END TABLEVIEW CODE */
     
