@@ -128,7 +128,7 @@ Development
 - [x] all text fields must be formatted and filled correctly
 - [x] communicate correctly with Firebase user authentification service
 
-**Sprint 2**
+## Sprint 2
 
 Design
 - [x] Conduct user tests
@@ -141,10 +141,24 @@ Development
 - [x] sign up button on sign up page broken SIGABRT
 - [x] fix logout crashing bug
 - [x] fix rounding error in AccountInfo View Controller
-- [ ] button functionality must trigger bluetooth device
-- [ ] bluetooth activity must be turned on
+- [x] button functionality must trigger bluetooth device
+- [x] bluetooth activity must be turned on
 - [x] create an in-app timer to count the tracking period
 - [ ] receive data from bluetooth transmitter
 - [ ] convert bitstream of input data to a % of body weight inputed onto the smart insole
 - [x] begin adding template for UI. (Image Views, UITextField Styling) 
+
+## FINAL SPRINT
+
+**Design**
+- [ ] create app icon in various sizes for Xcode
+- [x] provide all image assets to Steven
+- [x] Finish developing Hi-Fi's
+
+**Development**
+- [ ] Compute data from real time feedback
+- [x] post information into Firebase database
+- [x] get requests to database for summary data
+- [x] display calculated summary data
+
 
