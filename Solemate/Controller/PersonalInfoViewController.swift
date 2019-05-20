@@ -133,9 +133,9 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
             // do an alert to notify the user
             alert(Title: "Error", Message: "Please fill out all fields")
             return false
-        }
-        if rehabSessions.count == 0 {
+        } else if rehabSessions.count == 0 {
             alert(Title: "Error", Message: "Please add at least 1 rehab session")
+            return false
         }
         return true
     }
@@ -144,8 +144,6 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
      If field are inputted correctly, assign then to local variables
      */
     func assignFields() {
-        // create a new user object and fill in the fields
-        
         // Create a new document with current user's ID
         db.collection("users").document(currUID).setData([
             "firstName": currFname,
@@ -241,10 +239,10 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
             self.present(alertError, animated: true, completion: nil)
         }
         
-        //1. Create the alert controller.
+        // Create the alert controller.
         let alert = UIAlertController(title: "Session", message: "Add a new session", preferredStyle: .alert)
         
-        //2. Add the text field.
+        // Add the text field.
         alert.addTextField { (textField) in
             textField.placeholder = "Enter session time (in weeks)"
             textField.keyboardType = .numberPad
@@ -274,7 +272,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
             self.tableView.reloadData()
         }))
         
-        // 4. Present the alert.
+        // Present the alert.
         self.present(alert, animated: true, completion: nil)
     }
     
