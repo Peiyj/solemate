@@ -846,14 +846,6 @@ target range. Please adjust the weight based on the feedback.</string>
                                     <action selector="signInPressed:" destination="tCq-oz-McC" eventType="touchUpInside" id="z4x-1e-PYY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2X-H2-bcv">
-                                <rect key="frame" x="272" y="721" width="63" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="fake next"/>
-                                <connections>
-                                    <segue destination="cfk-z1-SZP" kind="show" animates="NO" id="LAF-vg-zcc"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYI-sc-MRC">
                                 <rect key="frame" x="48" y="415" width="278" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1102,14 +1094,6 @@ target range. Please adjust the weight based on the feedback.</string>
                                 <connections>
                                     <action selector="onBackPressed:" destination="cfk-z1-SZP" eventType="touchUpInside" id="T9W-7w-LLx"/>
                                     <segue destination="tCq-oz-McC" kind="show" id="EbD-gL-7nj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdt-SB-caA">
-                                <rect key="frame" x="280" y="213" width="63" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="fake next"/>
-                                <connections>
-                                    <segue destination="ven-Pi-kcK" kind="show" animates="NO" id="fd5-Fe-wHZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1653,11 +1637,10 @@ target range. Please adjust the weight based on the feedback.</string>
         <image name="testing" width="354" height="354"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PaL-yL-Y9e"/>
-        <segue reference="dBd-fU-wyR"/>
-        <segue reference="52f-NG-ytK"/>
+        <segue reference="pD5-mi-hyI"/>
+        <segue reference="lYg-PX-9AL"/>
         <segue reference="QqJ-LO-msu"/>
-        <segue reference="s2e-Fs-Xbb"/>
+        <segue reference="EbD-gL-7nj"/>
         <segue reference="Vd7-hB-Qnb"/>
         <segue reference="JMC-t1-t3G"/>
     </inferredMetricsTieBreakers>

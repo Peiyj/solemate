@@ -22,7 +22,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
     //local variable declarations
     var rehabSessions = [[String]]()
     var datePicker = UIDatePicker()
-    var conditionArr = ["ACLtear", "Ankle Osteochondritis Dissecans", "Ankle Sprain", "Hip Impingement", "Knee meniscus tear", "MCL tear", "PCL tear"]
+    var conditionArr = ["ACL Tear", "Ankle Osteochondritis Dissecans", "Ankle Sprain", "Hip Impingement", "Knee Meniscus Tear", "MCL Tear", "PCL Tear"]
     var conditionPicker = UIPickerView()
     var currFt = 0
     var currIn = 0
@@ -60,7 +60,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(endToolbar));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(endToolbar));
-        generalToolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        generalToolBar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         conditionTextField.inputAccessoryView = generalToolBar
         
         // Date toolbar for sugery date
@@ -197,7 +197,7 @@ class PersonalInfoViewController: UserFeedback, UIPickerViewDataSource, UIPicker
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         surgeryTextField.inputAccessoryView = toolbar
         surgeryTextField.inputView = datePicker

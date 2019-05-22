@@ -86,15 +86,15 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         let generalToolBar = UIToolbar()
         generalToolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(endToolbar));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(endToolbar));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(endToolbar));
         
-        generalToolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        
+        generalToolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         genderTextField.inputAccessoryView = generalToolBar
         heightTextField.inputAccessoryView = generalToolBar
         weightTextField.inputAccessoryView = generalToolBar
+        
         showDatePicker()
     }
     
@@ -128,7 +128,7 @@ class AccountInfoViewController: UserFeedback, UIPickerViewDataSource, UIPickerV
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         dateTextField.inputAccessoryView = toolbar
         dateTextField.inputView = datePicker
